@@ -50,7 +50,7 @@ function Navbar() {
           </div>
         </li>
       </ul>
-      <div className="flex justify-center item-center gap-5 text-sm py-4 max-md:hidden">
+      <div className="flex justify-center item-center gap-5 text-sm max-lg:py-4 max-md:hidden">
         <div className="rounded-full text-white px-5 py-2 bg-color-1 justify-center items-center flex gap-1">
           <i className="ri-gps-line ri-md"></i>
           <h6>Indonesia</h6>
