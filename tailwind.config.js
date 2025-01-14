@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors:{
-        'blacktransparent':'#0000'
+        'color-1':'#0000002d'
       }
     },
   },
