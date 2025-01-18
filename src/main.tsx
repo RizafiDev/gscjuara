@@ -20,7 +20,7 @@ createRoot(document.getElementById("root")!).render(
       <Navbar />
       <Header />
       <Card />
-      <NavItem />
+      {/* <NavItem /> */}
     </Background>
   </StrictMode>
 );
