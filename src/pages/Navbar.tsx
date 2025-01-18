@@ -1,17 +1,16 @@
 function Navbar() {
   return (
-    <nav className="scontainer flex items-center justify-between border-b border-gray-300 w-full max-md:pl-10 max-md:pr-16 px-16  backdrop-blur-sm shadow-sm">
+    <nav className="fixed z-10 container flex items-center justify-between border-b border-gray-300 w-full max-md:pl-10 max-md:pr-16 px-16  backdrop-blur-sm shadow-sm bg-slate-900/50">
       <div  className="lg:hidden">
         <div className="">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" />
-          </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
         </div>
-        <div id="dropdown-div" className="absolute  translate-y-8 z-10 ">
+        <div id="dropdown-div" className="absolute hidden translate-y-8 z-10 ">
           <ul className="rounded-xl border-solid border-white border-2 py-2 px-4 backdrop-blur-sm">
             <li><a href="" className="text-white">Homepage</a></li>
             <li><a href="" className="text-white">Vacation</a></li>
-            <li><a href="" className="text-white">Hotels</a></li>
+            <li><a href
+            ="" className="text-white">Hotels</a></li>
             <li><a href="" className="text-white">All in One</a></li>
             <li><a href="" className="text-white">Car Rental</a></li>
           </ul>

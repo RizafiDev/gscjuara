@@ -1,7 +1,7 @@
 import { useState } from "react";
 function Header() {
   return (
-    <div className="container w-full items-center justify-center min-h-[600px] flex flex-col gap-6">
+    <div className=" container w-full items-center justify-center min-h-[600px] flex flex-col gap-6">
       <h1 className="text-white text-5xl font-semibold max-w-[800px] text-center drop-shadow-lg">
         Temukan Surga Tersembunyi Wisata Nusantara
       </h1>
