@@ -18,9 +18,9 @@ function Header() {
         Dari pantai tropis hingga pegunungan megah, temukan keajaiban yang
         menanti untuk dijelajahi."
       </p>
-      <div className="action text-white flex bg-gray-800 p-2 rounded-full shadow-xl ">
+      <div className="action text-white flex bg-gray-800 p-2 rounded-full shadow-xl">
         <button
-          className={`flex items-center gap-1 py-3 px-7 rounded-full text-xs duration-200 ${
+          className={`flex items-center gap-1 py-3 px-6 rounded-full text-xs duration-200 ${
             activeButton === "beach"
               ? "bg-gray-600 text-white"
               : "bg-transparent text-gray-300"
@@ -31,7 +31,7 @@ function Header() {
           <p>Pantai</p>
         </button>
         <button
-          className={`flex items-center gap-1 py-3 px-7 rounded-full text-xs duration-200 ${
+          className={`flex items-center gap-1 py-3 px-6 rounded-full text-xs duration-200 ${
             activeButton === "monument"
               ? "bg-gray-600 text-white"
               : "bg-transparent text-gray-300"
@@ -42,7 +42,7 @@ function Header() {
           <p>Monumen</p>
         </button>
         <button
-          className={`flex items-center gap-1 py-3 px-7 rounded-full text-xs duration-200 ${
+          className={`flex items-center gap-1 py-3 px-6 rounded-full text-xs duration-200 ${
             activeButton === "mount"
               ? "bg-gray-600 text-white"
               : "bg-transparent text-gray-300"

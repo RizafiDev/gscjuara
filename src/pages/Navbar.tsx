@@ -1,7 +1,41 @@
 function Navbar() {
+  const dropdown = () => {
+    const dropdownContainer = document.getElementById("dropdown-container");
+    if (dropdownContainer) {
+      if (dropdownContainer.style.maxHeight && dropdownContainer.style.maxHeight !== "0px") {
+        dropdownContainer.classList.toggle("max-h-0")
+      } else {
+        dropdownContainer.style.maxHeight = dropdownContainer.scrollHeight + "px";
+      };
+    };
+  };
+  {/*Navbar Scroll Function*/ }
+  let previousScroll = window.scrollY;
+  const navbarScroll = () => {
+    const navbarContainer = document.getElementById("navbar-container");
+    let currentScroll = window.scrollY;
+    if (navbarContainer) {
+      if (currentScroll > previousScroll) {
+        navbarContainer.classList.replace("top-2", "-top-24");
+        closeDropdown();
+      } else {
+        navbarContainer.classList.replace("-top-24", "top-2");
+      };
+    };
+    previousScroll = currentScroll;
+    function closeDropdown() {
+      const dropdownContainer = document.getElementById("dropdown-container");
+      if (dropdownContainer) {
+        if (dropdownContainer && dropdownContainer.style.maxHeight !== "0px") {
+          dropdownContainer.style.maxHeight = "0";
+        }
+      };
+    };
+  };
+  window.addEventListener("scroll", navbarScroll);
   return (
-    <nav className="fixed z-10 py-2 top-0 left-1/2 transform -translate-x-1/2 w-full max-w-7xl rounded-full mt-4 flex items-center justify-between shadow-inner shadow-gray-950 px-5 backdrop-blur-sm bg-gray-800">
-      <div className="lg:hidden">
+    <nav id="navbar-container" className="fixed z-10 transition-all duration-700 py-2 top-2 left-1/2 transform -translate-x-1/2 w-full max-w-7xl rounded-full mt-4 flex items-center justify-between shadow-inner shadow-gray-950 px-5 backdrop-blur-sm bg-gray-800">
+      <div className="lg:hidden" onClick={dropdown}>
         <div className="">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -13,8 +47,8 @@ function Navbar() {
             <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
           </svg>
         </div>
-        <div id="dropdown-div" className="absolute hidden translate-y-8 z-10">
-          <ul className="rounded-xl border-solid border-white border-2 py-2 px-4 backdrop-blur-sm">
+        <div id="dropdown-container" className="absolute max-h-0 overflow-hidden translate-y-8 md:translate-y-12 z-10 transition-all duration-300">
+          <ul className="rounded-xl border-solid border-white border-2 py-2 px-4 bg-slate-800">
             <li>
               <a href="" className="text-white">
                 Homepage
