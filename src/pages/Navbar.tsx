@@ -2,14 +2,18 @@ function Navbar() {
   const dropdown = () => {
     const dropdownContainer = document.getElementById("dropdown-container");
     if (dropdownContainer) {
-      if (dropdownContainer.style.maxHeight && dropdownContainer.style.maxHeight !== "0px") {
-        dropdownContainer.classList.toggle("max-h-0")
-      } else {
+      if (
+        dropdownContainer.style.maxHeight === "0px" ||!dropdownContainer.style.maxHeight
+      ) {
         dropdownContainer.style.maxHeight = dropdownContainer.scrollHeight + "px";
-      };
-    };
+      } else {
+        dropdownContainer.style.maxHeight = "0px";
+      }
+    }
   };
-  {/*Navbar Scroll Function*/ }
+  {
+    /*Navbar Scroll Function*/
+  }
   let previousScroll = window.scrollY;
   const navbarScroll = () => {
     const navbarContainer = document.getElementById("navbar-container");
@@ -20,8 +24,8 @@ function Navbar() {
         closeDropdown();
       } else {
         navbarContainer.classList.replace("-top-24", "top-2");
-      };
-    };
+      }
+    }
     previousScroll = currentScroll;
     function closeDropdown() {
       const dropdownContainer = document.getElementById("dropdown-container");
@@ -29,12 +33,15 @@ function Navbar() {
         if (dropdownContainer && dropdownContainer.style.maxHeight !== "0px") {
           dropdownContainer.style.maxHeight = "0";
         }
-      };
-    };
+      }
+    }
   };
   window.addEventListener("scroll", navbarScroll);
   return (
-    <nav id="navbar-container" className="fixed z-10 transition-all duration-700 py-2 top-2 left-1/2 transform -translate-x-1/2 w-full max-w-7xl rounded-full mt-4 flex items-center justify-between shadow-inner shadow-gray-950 px-5 backdrop-blur-sm bg-gray-800">
+    <nav
+      id="navbar-container"
+      className="fixed z-10 transition-all duration-700 py-2 top-2 left-1/2 transform -translate-x-1/2 w-full max-w-7xl rounded-full mt-4 flex items-center justify-between shadow-inner shadow-gray-950 px-5 backdrop-blur-sm bg-gray-800 "
+    >
       <div className="lg:hidden" onClick={dropdown}>
         <div className="">
           <svg
@@ -47,30 +54,33 @@ function Navbar() {
             <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
           </svg>
         </div>
-        <div id="dropdown-container" className="absolute max-h-0 overflow-hidden translate-y-8 md:translate-y-12 z-10 transition-all duration-300">
-          <ul className="rounded-xl border-solid border-white border-2 py-2 px-4 bg-slate-800">
-            <li>
-              <a href="" className="text-white">
+        {/* Dropdown */}
+        <div
+          id="dropdown-container"
+          className="w-[calc(100vw-20px)] absolute translate-y-4 md:translate-y-12 z-10 transition-all duration-300 whitespace-nowrap ">
+          <ul className="bg-slate-800 rounded-full flex gap-1 m-2 p-1 overflow-x-auto">
+            <li className="rounded-full px-6 py-3 all transition-all hover:bg-gray-600 text-lg">
+              <a href="" className="text-white ">
                 Homepage
               </a>
             </li>
-            <li>
-              <a href="" className="text-white">
+            <li className="rounded-full px-6 py-3 all transition-all hover:bg-gray-600 text-lg">
+              <a href="" className="text-white ">
                 Vacation
               </a>
             </li>
-            <li>
-              <a href="" className="text-white">
+            <li className="rounded-full px-6 py-3 all transition-all hover:bg-gray-600 text-lg">
+              <a href="" className="text-white ">
                 Hotels
               </a>
             </li>
-            <li>
-              <a href="" className="text-white">
+            <li className="rounded-full px-6 py-3 all transition-all hover:bg-gray-600 text-lg">
+              <a href="" className="text-white ">
                 All in One
               </a>
             </li>
-            <li>
-              <a href="" className="text-white">
+            <li className="rounded-full px-6 py-3 all transition-all hover:bg-gray-600 text-lg">
+              <a href="" className="text-white ">
                 Car Rental
               </a>
             </li>
@@ -78,7 +88,7 @@ function Navbar() {
         </div>
       </div>
       <h1 className="text-white text-2xl font-medium ml-7">Nusantara</h1>
-      <ul className="flex gap-8 max-lg:hidden text-sm">
+      <ul className="flex gap-8 max-lg:hidden text-sm ">
         <li className="relative group">
           <a href="#" className="text-white block py-4">
             Homepage
