@@ -1,29 +1,17 @@
 function Navbar() {
-  const dropdown = () => {
-    const dropdownContainer = document.getElementById("dropdown-container");
-    if (dropdownContainer) {
-      if (
-        dropdownContainer.style.maxHeight === "0px" ||!dropdownContainer.style.maxHeight
-      ) {
-        dropdownContainer.style.maxHeight = dropdownContainer.scrollHeight + "px";
-      } else {
-        dropdownContainer.style.maxHeight = "0px";
-      }
-    }
-  };
   {
     /*Navbar Scroll Function*/
   }
   let previousScroll = window.scrollY;
   const navbarScroll = () => {
     const navbarContainer = document.getElementById("navbar-container");
-    let currentScroll = window.scrollY;
+    const currentScroll = window.scrollY;
     if (navbarContainer) {
       if (currentScroll > previousScroll) {
-        navbarContainer.classList.replace("top-2", "-top-24");
+        navbarContainer.classList.replace("top-2", "-top-20");
         closeDropdown();
       } else {
-        navbarContainer.classList.replace("-top-24", "top-2");
+        navbarContainer.classList.replace("-top-20", "top-2");
       }
     }
     previousScroll = currentScroll;
@@ -40,46 +28,34 @@ function Navbar() {
   return (
     <nav
       id="navbar-container"
-      className="fixed z-10 transition-all duration-700 py-2 top-2 left-1/2 transform -translate-x-1/2 w-full max-w-7xl rounded-full mt-4 flex items-center justify-between shadow-inner shadow-gray-950 px-5 backdrop-blur-sm bg-gray-800 "
-    >
-      <div className="lg:hidden" onClick={dropdown}>
-        <div className="">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="24px"
-            viewBox="0 -960 960 960"
-            width="24px"
-            fill="#FFFFFF"
-          >
-            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-          </svg>
-        </div>
+      className="fixed z-10 transition-all duration-700 py-2 top-2 left-1/2 transform -translate-x-1/2 w-full max-w-7xl rounded-full mt-4 flex items-center shadow-inner justify-between shadow-gray-950 px-5 backdrop-blur-sm bg-gray-800 ">
+      <div className="lg:hidden">
         {/* Dropdown */}
         <div
           id="dropdown-container"
-          className="w-[calc(100vw-20px)] absolute translate-y-4 md:translate-y-12 z-10 transition-all duration-300 whitespace-nowrap ">
+          className="w-[calc(100vw-20px)] absolute translate-y-10 md:translate-y-12 z-10 transition-all duration-300 whitespace-nowrap">
           <ul className="bg-slate-800 rounded-full flex gap-1 m-2 p-1 overflow-x-auto">
-            <li className="rounded-full px-6 py-3 all transition-all hover:bg-gray-600 text-lg">
+            <li className="rounded-full px-3 py-0.5 all transition-all hover:bg-gray-600 text-lg">
               <a href="" className="text-white ">
                 Homepage
               </a>
             </li>
-            <li className="rounded-full px-6 py-3 all transition-all hover:bg-gray-600 text-lg">
+            <li className="rounded-full px-3 py-0.5 all transition-all hover:bg-gray-600 text-lg">
               <a href="" className="text-white ">
                 Vacation
               </a>
             </li>
-            <li className="rounded-full px-6 py-3 all transition-all hover:bg-gray-600 text-lg">
+            <li className="rounded-full px-3 py-0.5 all transition-all hover:bg-gray-600 text-lg">
               <a href="" className="text-white ">
                 Hotels
               </a>
             </li>
-            <li className="rounded-full px-6 py-3 all transition-all hover:bg-gray-600 text-lg">
+            <li className="rounded-full px-3 py-0.5 all transition-all hover:bg-gray-600 text-lg">
               <a href="" className="text-white ">
                 All in One
               </a>
             </li>
-            <li className="rounded-full px-6 py-3 all transition-all hover:bg-gray-600 text-lg">
+            <li className="rounded-full px-3 py-0.5 all transition-all hover:bg-gray-600 text-lg">
               <a href="" className="text-white ">
                 Car Rental
               </a>
@@ -87,7 +63,17 @@ function Navbar() {
           </ul>
         </div>
       </div>
-      <h1 className="text-white text-2xl font-medium ml-7">Nusantara</h1>
+      <h1 className="text-white text-2xl font-medium max-md:ml-0 ml-7">Nusantara</h1>
+      {/*  */}
+      <div className="md:hidden flex justify-center item-center gap-1 text-sm ml-1.5">
+        <div className="rounded-full text-white px-3 py-0.5 bg-color-1 justify-center items-center flex gap-1">
+          <i className="ri-gps-line ri-md"></i>
+          <h6>Indonesia</h6>
+        </div>
+        <div className="rounded-full px-3 py-0.5 bg-white justify-center items-center flex shadow-inner shadow-gray-400">
+          <h6 className="">Register</h6>
+        </div>
+      </div>
       <ul className="flex gap-8 max-lg:hidden text-sm ">
         <li className="relative group">
           <a href="#" className="text-white block py-4">
