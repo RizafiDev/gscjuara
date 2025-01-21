@@ -4,6 +4,9 @@ import logo from "../assets/images/logo/racana.png";
 
 function Splash() {
   useEffect(() => {
+    // Menambahkan overflow: hidden ke body
+    document.body.style.overflow = "hidden";
+
     // GSAP animation for splash screen
     gsap.fromTo(
       "#splash",
@@ -18,6 +21,8 @@ function Splash() {
           if (splash) {
             splash.style.zIndex = "-1";
           }
+          // Mengembalikan overflow ke auto setelah animasi selesai
+          document.body.style.overflow = "auto";
         },
       }
     );
@@ -34,18 +39,17 @@ function Splash() {
 
     gsap.fromTo(
       "#garis",
-      { opacity: 0,x: -20 },
+      { opacity: 0, x: -20 },
       {
         x: 0,
         opacity: 1,
         duration: 1,
-        delay:1,
+        delay: 1,
       }
     );
 
     gsap.fromTo(
       "#deskripsi",
-
       { opacity: 0, x: -20 },
       {
         opacity: 1,
@@ -54,6 +58,11 @@ function Splash() {
         delay: 1.7,
       }
     );
+
+    // Membersihkan style overflow jika komponen dibersihkan sebelum animasi selesai
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, []); // Empty dependency array ensures this runs once on mount
 
   return (
@@ -70,12 +79,12 @@ function Splash() {
         />
         <div className="w-[2px] h-16 bg-white" id="garis"></div>
         <div className="des flex flex-col items-start" id="deskripsi">
-        <p className="text-white font-medium text-lg">
-          Ganesha Scout Competition #6
-        </p>
-        <p className="text-white font-medium text-lg">
-          Desain Inovasi Website
-        </p>
+          <p className="text-white font-medium text-lg">
+            Ganesha Scout Competition #6
+          </p>
+          <p className="text-white font-medium text-lg">
+            Desain Inovasi Website
+          </p>
         </div>
       </div>
     </div>

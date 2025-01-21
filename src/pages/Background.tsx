@@ -1,5 +1,5 @@
-import React from 'react';
-import BgImg from '../assets/images/background.jpg';
+import React from "react";
+import BgImg from "../assets/images/background.jpg";
 
 const Background: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (

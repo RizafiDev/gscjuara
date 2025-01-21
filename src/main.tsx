@@ -15,7 +15,7 @@ AOS.init();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    {/* <Splash/> */}
+    {/* <Splash /> */}
     <Background>
       <Navbar />
       <Header />
