@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import rajaAmpat from "../assets/images/card/ampat.jpg";
 import tnpKomodo from "../assets/images/card/komodo.jpg";
-import tnBTS from "../assets/images/card/tnbts.jpg";
+import tnBromoSemeru from "../assets/images/card/bromo.jpg";
 
 // Map ikon kategori
 const iconMap: Record<string, string> = {
@@ -32,7 +32,7 @@ const cardData = [
     tags: ["Laut", "Diving", "Alam", "Family", "Fauna"],
   },
   {
-    image: tnBTS,
+    image: tnBromoSemeru,
     title: "TN Bromo Tengger Semeru",
     rating: "4.6/5",
     description: "Memandang alam dari atas gunung.",
@@ -40,7 +40,7 @@ const cardData = [
     tags: ["Gunung", "Alam", "Family", "Fauna"],
   },
   {
-    image: tnBTS,
+    image: tnBromoSemeru,
     title: "TN Bromo Tengger Semeru",
     rating: "4.6/5",
     description: "Memandang alam dari atas gunung.",
@@ -48,7 +48,7 @@ const cardData = [
     tags: ["Gunung", "Alam", "Family", "Fauna"],
   },
   {
-    image: tnBTS,
+    image: tnBromoSemeru,
     title: "TN Bromo Tengger Semeru",
     rating: "4.6/5",
     description: "Memandang alam dari atas gunung.",
@@ -56,7 +56,7 @@ const cardData = [
     tags: ["Gunung", "Alam", "Family", "Fauna"],
   },
   {
-    image: tnBTS,
+    image: tnBromoSemeru,
     title: "TN Bromo Tengger Semeru",
     rating: "4.6/5",
     description: "Memandang alam dari atas gunung.",
@@ -64,7 +64,7 @@ const cardData = [
     tags: ["Gunung", "Alam", "Family", "Fauna"],
   },
   {
-    image: tnBTS,
+    image: tnBromoSemeru,
     title: "TN Bromo Tengger Semeru",
     rating: "4.6/5",
     description: "Memandang alam dari atas gunung.",
