@@ -3,7 +3,7 @@ import BgImg from "../assets/images/background.jpg";
 
 const Background: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <main className="w-full h-[1500px] relative">
+    <main className="w-full h-[1400px] relative">
       {/* Background Image */}
       <img
         src={BgImg}

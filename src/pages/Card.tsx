@@ -111,7 +111,7 @@ function Card() {
   }, []);
 
   return (
-    <div className="container w-full mx-auto items-center justify-center px-10 md:px-40 flex flex-col gap-8">
+    <div className="container w-full mx-auto items-center justify-center px-10 md:px-40 flex flex-col gap-8 pb-24">
       {/* Header */}
       <div className="header flex w-full items-center max-md:justify-center md:justify-between">
         <div className="layer gap-5 flex items-center">
@@ -172,19 +172,17 @@ function Card() {
               <div className="desc text-white flex flex-col items-start mb-2">
                 <h1 className="text-lg font-medium">{card.title}</h1>
                 <p className="text-xs max-w-56">{card.description}</p>
-                <div className="badge grid grid-cols-3 gap-2 my-3">
-                  {card.tags.map((tag, tagIndex) => (
-                    <div
-                      key={tagIndex}
-                      className="tag flex items-center gap-1 bg-gray-700 py-1 px-3 rounded-full"
-                    >
-                      <i
-                        className={`${iconMap[tag] || "ri-star-line"} ri-xs`}
-                      ></i>
-                      <p className="text-xs">{tag}</p>
-                    </div>
-                  ))}
-                </div>
+                <div className="badge flex flex-wrap gap-2 my-3">
+                    {card.tags.map((tag, tagIndex) => (
+                   <div
+                       key={tagIndex}
+                       className="tag flex items-center gap-1 bg-gray-700 py-1 px-3 rounded-full max-w-[200px] truncate"
+                      >
+                      <i className={`${iconMap[tag] || "ri-star-line"} ri-xs`}></i>
+                         <p className="text-xs truncate">{tag}</p>
+                       </div>
+                      ))}
+                      </div>
                 <div className="harga text-2xl">
                   {card.price}
                   <span className="text-gray-400 text-sm">/orang</span>
