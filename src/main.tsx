@@ -9,7 +9,6 @@ import Background from "./pages/Background";
 import Splash from "./pages/Splash";
 import Header from "./pages/Header";
 import Card from "./pages/Card";
-import NavItem from "./pages/NavItem";
 import About from "./pages/About";
 
 AOS.init();
@@ -22,7 +21,6 @@ createRoot(document.getElementById("root")!).render(
       <Header />
       <Card />
       <About/>
-      {/* <NavItem /> */}
     </Background>
   </StrictMode>
 );

@@ -15,7 +15,7 @@ function About() {
             ></path>
           </svg>
         </div>
-        <div className="header text-white z-10 px-40">
+        <div className="header text-white z-10 md:px-40">
             <h1 className="font-semibold text-4xl">Mengenal tentang<br />Nusantravel</h1>
             <p></p>
         </div>

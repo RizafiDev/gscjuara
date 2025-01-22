@@ -2,6 +2,10 @@ import { useRef, useEffect } from "react";
 import rajaAmpat from "../assets/images/card/ampat.jpg";
 import tnpKomodo from "../assets/images/card/komodo.jpg";
 import tnBromoSemeru from "../assets/images/card/bromo.jpg";
+import tawangmangu from "../assets/images/card/tawangmangu.jpg";
+import toba from "../assets/images/card/toba.jpg";
+import sentani from "../assets/images/card/sentani.jpg";
+import ijen from "../assets/images/card/ijen.jpg";
 
 // Map ikon kategori
 const iconMap: Record<string, string> = {
@@ -40,36 +44,36 @@ const cardData = [
     tags: ["Gunung", "Alam", "Family", "Fauna"],
   },
   {
-    image: tnBromoSemeru,
-    title: "TN Bromo Tengger Semeru",
-    rating: "4.6/5",
-    description: "Memandang alam dari atas gunung.",
+    image: tawangmangu,
+    title: "Tawangmangu",
+    rating: "4.1/5",
+    description: "Nikmati keindahan dan segarnya alam di lereng Gunung Lawu.",
     price: "$50",
-    tags: ["Gunung", "Alam", "Family", "Fauna"],
+    tags: ["Gunung", "Alam", "Family"],
   },
   {
-    image: tnBromoSemeru,
-    title: "TN Bromo Tengger Semeru",
-    rating: "4.6/5",
-    description: "Memandang alam dari atas gunung.",
+    image: toba,
+    title: "Danau Toba",
+    rating: "4.5/5",
+    description: "Danau vulkanik terbesar di Indonesia dengan pulau Samosir di tengahnya.",
     price: "$50",
-    tags: ["Gunung", "Alam", "Family", "Fauna"],
+    tags: ["Gunung", "Alam", "Family"],
   },
   {
-    image: tnBromoSemeru,
-    title: "TN Bromo Tengger Semeru",
-    rating: "4.6/5",
-    description: "Memandang alam dari atas gunung.",
+    image: ijen,
+    title: "Kawah Ijen",
+    rating: "4.8/5",
+    description: "Rasakan keajaiban api biru dan pemandangan kawah belerang yang memukau.",
     price: "$50",
-    tags: ["Gunung", "Alam", "Family", "Fauna"],
+    tags: ["Gunung", "Alam", "Family",],
   },
   {
-    image: tnBromoSemeru,
-    title: "TN Bromo Tengger Semeru",
-    rating: "4.6/5",
-    description: "Memandang alam dari atas gunung.",
+    image: sentani,
+    title: "Danau Sentani",
+    rating: "4.2/5",
+    description: "Nikmati keindahan danau yang dikelilingi oleh 21 pulau kecil.",
     price: "$50",
-    tags: ["Gunung", "Alam", "Family", "Fauna"],
+    tags: ["Alam", "Family"],
   },
 ];
 

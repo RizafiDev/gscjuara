@@ -28,31 +28,15 @@ function Navbar() {
       <div className="max-md:-translate-x-36 lg:hidden flex items-center mx-auto w-full mt-14">
         <div className="max-md:w-[calc(100vw-20px)] sm:w-max absolute translate-y-10 md:translate-y-12 z-10 transition-all duration-300 whitespace-nowrap">
           <ul className="bg-slate-800 rounded-full flex gap-1 m-2 p-1 overflow-x-auto">
-            <li className="rounded-full px-3 py-0.5 all transition-all hover:bg-gray-600 text-lg">
-              <a href="" className="text-white ">
-                Homepage
-              </a>
-            </li>
-            <li className="rounded-full px-3 py-0.5 all transition-all hover:bg-gray-600 text-lg">
-              <a href="" className="text-white ">
-                Vacation
-              </a>
-            </li>
-            <li className="rounded-full px-3 py-0.5 all transition-all hover:bg-gray-600 text-lg">
-              <a href="" className="text-white ">
-                Hotels
-              </a>
-            </li>
-            <li className="rounded-full px-3 py-0.5 all transition-all hover:bg-gray-600 text-lg">
-              <a href="" className="text-white ">
-                All in One
-              </a>
-            </li>
-            <li className="rounded-full px-3 py-0.5 all transition-all hover:bg-gray-600 text-lg">
-              <a href="" className="text-white ">
-                Car Rental
-              </a>
-            </li>
+            {["Homepage", "Vacation", "Hotels", "All in One", "Car Rental"].map(
+              (item) => (
+                <li key={item} className="rounded-full px-3 py-0.5 all transition-all hover:bg-gray-600 text-lg">
+                  <a href="#" className="text-white ">
+                    {item}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
         </div>
       </div>
