@@ -19,7 +19,7 @@ function Navbar() {
   return (
     <nav
       id="navbar-container"
-      className="fixed z-10 transition-all duration-700 py-2 top-2 left-1/2 transform -translate-x-1/2 w-full max-w-7xl rounded-full mt-4 flex items-center shadow-inner justify-between shadow-gray-950 px-5 backdrop-blur-sm bg-gray-800 "
+      className="fixed z-50 transition-all duration-700 py-2 mb-10 top-2 left-1/2 transform -translate-x-1/2 w-full max-w-7xl rounded-full mt-4 flex items-center shadow-inner justify-between shadow-gray-950 px-5 backdrop-blur-sm bg-gray-800 "
     >
       <div className="lg:hidden">
         {/* Dropdown */}

@@ -20,9 +20,10 @@ const Map: React.FC = () => {
   };
 
   return (
-    <div className="container w-full flex items-center justify-center mx-auto px-40 relative h-screen flex-col gap-24">
-      <div className="header flex items-center justify-center w-full">
-        <h1 className="font-semibold text-4xl text-white">Peta Indonesia</h1>
+    <div className="container w-full flex items-center justify-center mx-auto px-40 relative  flex-col gap-24 py-24">
+      <div className="header flex items-center justify-center w-full flex-col text-white ">
+        <h1 className="font-semibold text-4xl ">Peta Nusantara</h1>
+        <p className="font-medium">Klik pulau untuk infromasi</p>
       </div>
       <div className="map w-full">
         <svg
