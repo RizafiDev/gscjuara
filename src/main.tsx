@@ -10,6 +10,7 @@ import Splash from "./pages/Splash";
 import Header from "./pages/Header";
 import Card from "./pages/Card";
 import About from "./pages/About";
+import Map from "./pages/Map";
 
 AOS.init();
 
@@ -20,7 +21,8 @@ createRoot(document.getElementById("root")!).render(
       <Navbar />
       <Header />
       <Card />
-      <About/>
+      <About />
+      <Map />
     </Background>
   </StrictMode>
 );
