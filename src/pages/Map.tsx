@@ -1,26 +1,88 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
+// Data untuk tiap pulau
+const pulauData = [
+  {
+    id: "Jawa",
+    image: "jawaImageUrl",
+    title: "Pulau Jawa",
+    rating: "4.8/5",
+    description: "Pulau dengan pusat budaya dan ekonomi Indonesia.",
+    price: "$50",
+    tags: ["Budaya", "Kota", "Ekonomi", "Alam"],
+  },
+  {
+    id: "Sumatera",
+    image: "sumateraImageUrl",
+    title: "Pulau Sumatera",
+    rating: "4.6/5",
+    description: "Pulau dengan keindahan alam dan kekayaan budaya.",
+    price: "$60",
+    tags: ["Hutan", "Gunung", "Budaya", "Pulau"],
+  },
+  {
+    id: "Kalimantan",
+    image: "kalimantanImageUrl",
+    title: "Pulau Kalimantan",
+    rating: "4.7/5",
+    description: "Surga bagi para pecinta hutan hujan dan satwa liar.",
+    price: "$70",
+    tags: ["Hutan", "Satwa", "Adventure", "Pulau"],
+  },
+  // Tambahkan data lainnya untuk Sulawesi, Papua, Maluku, dll.
+];
 
 const Map: React.FC = () => {
-  const [popupData, setPopupData] = useState<{
-    x: number;
-    y: number;
-    name: string;
-  } | null>(null);
+  const [selectedPulau, setSelectedPulau] = useState<
+    null | (typeof pulauData)[0]
+  >(null);
 
-  const handleGroupClick = (
-    event: React.MouseEvent<SVGGElement, MouseEvent>,
-    name: string
-  ) => {
-    const { clientX: x, clientY: y } = event;
-    setPopupData({ x, y, name });
+  const handlePulauClick = (id: string) => {
+    const data = pulauData.find((pulau) => pulau.id === id);
+    setSelectedPulau(data || null);
   };
 
-  const closePopup = () => {
-    setPopupData(null);
+  const closeOverlay = () => {
+    setSelectedPulau(null);
   };
+  useEffect(() => {
+    if (selectedPulau) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [selectedPulau]);
 
   return (
-    <div className="container w-full flex items-center justify-center mx-auto px-40 relative  flex-col gap-24 py-24">
+    <div className="container w-full  items-center justify-center mx-auto px-40 relative flex flex-col gap-24 py-24">
+      {/* tesss */}
+      <div
+        className="overlayyyyyy absolute w-full h-screen container bg-black backdrop-blur-sm bg-opacity-50 p-24 hidden duration-200 ease-in-out"
+        id="efek-blur"
+        onClick={closeOverlay}
+      >
+        <div
+          className="parent w-full  bg-white rounded-xl p-10 flex flex-col scale-0 duration-200 ease-in-out"
+          id="overlay"
+        >
+          <div className="header flex flex-col gap-4">
+            <h1 className="font-semibold text-black text-3xl">Pulau Jawa</h1>
+          </div>
+          <div className="garis w-full h-[2px] rounded-full bg-black"></div>
+          <div className="action flex w-full items-end justify-end mt-4">
+            <button
+              className="bg-red-500 px-4 py-2 rounded-lg text-white duration-150 hover:bg-red-700"
+              onClick={closeOverlay}
+            >
+              Tutup
+            </button>
+          </div>
+        </div>
+      </div>
+      {/* tesss */}
       <div className="header flex items-center justify-center w-full flex-col text-white ">
         <h1 className="font-semibold text-4xl ">Peta Nusantara</h1>
         <p className="font-medium">Klik pulau untuk infromasi</p>
@@ -37,7 +99,7 @@ const Map: React.FC = () => {
             id="Jawa"
             name="Jawa"
             className="group hover:fill-yellow-300 transition duration-300 ease-in-out cursor-pointer"
-            onClick={(e) => handleGroupClick(e, "Jawa")}
+            onClick={() => handlePulauClick("Jawa")}
           >
             <path
               id="id-bt"
@@ -76,7 +138,7 @@ const Map: React.FC = () => {
             id="Sumatera"
             name="Sumatera"
             className="group hover:fill-yellow-300 transition duration-300 ease-in-out cursor-pointer"
-            onClick={(e) => handleGroupClick(e, "Sumatera")}
+            onClick={() => handlePulauClick("Sumatera")}
           >
             <path
               id="id-ac"
@@ -135,7 +197,7 @@ const Map: React.FC = () => {
             id="Kalimantan"
             name="Kalimantan"
             className="group hover:fill-yellow-300 transition duration-300 ease-in-out cursor-pointer"
-            onClick={(e) => handleGroupClick(e, "Kalimantan")}
+            onClick={() => handlePulauClick("Kalimantan")}
           >
             <path
               id="id-kb"
@@ -170,7 +232,7 @@ const Map: React.FC = () => {
             id="Sulawesi"
             name="Sulawesi"
             className="group hover:fill-yellow-300 transition duration-300 ease-in-out cursor-pointer"
-            onClick={(e) => handleGroupClick(e, "Sulawesi")}
+            onClick={() => handlePulauClick("Sulawesi")}
           >
             <path
               id="id-go"
@@ -211,7 +273,7 @@ const Map: React.FC = () => {
             id="Papua"
             name="Papua"
             className="group hover:fill-yellow-300 transition duration-300 ease-in-out cursor-pointer"
-            onClick={(e) => handleGroupClick(e, "Papua")}
+            onClick={() => handlePulauClick("Papua")}
           >
             <path
               id="id-pa"
@@ -230,7 +292,7 @@ const Map: React.FC = () => {
             id="Maluku"
             name="Maluku"
             className="group hover:fill-yellow-300 transition duration-300 ease-in-out cursor-pointer"
-            onClick={(e) => handleGroupClick(e, "Maluku")}
+            onClick={() => handlePulauClick("Maluku")}
           >
             <path
               id="id-ma"
@@ -249,7 +311,7 @@ const Map: React.FC = () => {
             id="Nusa_Tenggara"
             name="Nusa_Tenggara"
             className="group hover:fill-yellow-300 transition duration-300 ease-in-out cursor-pointer"
-            onClick={(e) => handleGroupClick(e, "Bali & Nusa Tenggara")}
+            onClick={() => handlePulauClick("BaliNT")}
           >
             <path
               id="id-ba"
@@ -270,22 +332,38 @@ const Map: React.FC = () => {
         </svg>
         ;
       </div>
-      {/* Pop-Up */}
-      {popupData && (
+      {/* Overlay dengan animasi */}
+      {selectedPulau && (
         <div
-          className="absolute bg-white shadow-lg p-4 rounded-lg z-50"
-          style={{ top: popupData.y, left: popupData.x }}
+          className="fixed inset-0 z-50 bg-black backdrop-blur-sm bg-opacity-50 flex items-center justify-center duration-300 ease-in-out"
+          onClick={closeOverlay}
         >
-          s<h2 className="text-lg font-semibold">{popupData.name}</h2>
-          <p className="text-sm text-gray-600">
-            Ini adalah informasi tentang {popupData.name}.
-          </p>
-          <button
-            className="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
-            onClick={closePopup}
+          <div
+            className="bg-white rounded-xl p-10 w-96 transform scale-0 opacity-0 animate-popup"
+            id="overlay"
+            onClick={(e) => e.stopPropagation()}
           >
-            Tutup
-          </button>
+            <div className="header flex flex-col gap-4">
+              <img
+                src={selectedPulau.image}
+                alt={selectedPulau.title}
+                className="w-full h-48 object-cover rounded-lg"
+              />
+              <h1 className="font-semibold text-black text-3xl">
+                {selectedPulau.title}
+              </h1>
+              <p className="text-gray-600">{selectedPulau.description}</p>
+            </div>
+            <div className="garis w-full h-[2px] rounded-full bg-black my-4"></div>
+            <div className="action flex w-full items-end justify-end">
+              <button
+                className="bg-red-500 px-4 py-2 rounded-lg text-white duration-150 hover:bg-red-700"
+                onClick={closeOverlay}
+              >
+                Tutup
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </div>
