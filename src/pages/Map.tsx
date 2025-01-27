@@ -1,35 +1,118 @@
 import React, { useState, useEffect } from "react";
+// img kalimantan
+import kalimantan1 from "../assets/images/maps/kalimantan/1.jpg";
+import kalimantan2 from "../assets/images/maps/kalimantan/2.jpg";
+import kalimantan3 from "../assets/images/maps/kalimantan/3.jpg";
+import kalimantan4 from "../assets/images/maps/kalimantan/4.jpg";
+import kalimantan5 from "../assets/images/maps/kalimantan/6.jpg";
+// img jawaa
+import jawa1 from "../assets/images/maps/jawa/1.jpg";
+import jawa2 from "../assets/images/maps/jawa/2.jpg";
+import jawa3 from "../assets/images/maps/jawa/3.jpg";
+import jawa4 from "../assets/images/maps/jawa/4.jpg";
+import jawa5 from "../assets/images/maps/jawa/5.jpg";
+// img sumatraa
+import sumatera1 from "../assets/images/maps/sumatera/1.jpg";
+import sumatera2 from "../assets/images/maps/sumatera/2.jpg";
+import sumatera3 from "../assets/images/maps/sumatera/3.jpg";
+import sumatera4 from "../assets/images/maps/sumatera/4.jpg";
+import sumatera5 from "../assets/images/maps/sumatera/5.jpg";
+// img sulawesii
+import sulawesi1 from "../assets/images/maps/sulawesi/1.jpg";
+import sulawesi2 from "../assets/images/maps/sulawesi/2.jpg";
+import sulawesi3 from "../assets/images/maps/sulawesi/3.jpg";
+import sulawesi4 from "../assets/images/maps/sulawesi/4.jpg";
+import sulawesi5 from "../assets/images/maps/sulawesi/5.jpg";
+// malukuuu
+import maluku1 from "../assets/images/maps/maluku/1.jpg";
+import maluku2 from "../assets/images/maps/maluku/2.jpg";
+import maluku3 from "../assets/images/maps/maluku/3.jpg";
+import maluku4 from "../assets/images/maps/maluku/4.jpg";
+import maluku5 from "../assets/images/maps/maluku/5.jpg";
+// balimalukuuu
+import bali1 from "../assets/images/maps/nttbali/1.jpg";
+import bali2 from "../assets/images/maps/nttbali/2.jpg";
+import bali3 from "../assets/images/maps/nttbali/3.jpg";
+import bali4 from "../assets/images/maps/nttbali/4.jpg";
+import bali5 from "../assets/images/maps/nttbali/5.jpg";
+// papua
+import papua1 from "../assets/images/maps/papua/1.jpg";
+import papua2 from "../assets/images/maps/papua/2.jpg";
+import papua3 from "../assets/images/maps/papua/3.jpg";
+import papua4 from "../assets/images/maps/papua/4.jpg";
+import papua5 from "../assets/images/maps/papua/5.jpg";
 
+const iconPulau: Record<string, string> = {
+  Laut: "ri-water-flash-line",
+  Diving: "ri-anchor-line",
+  Alam: "ri-landscape-line",
+  Family: "ri-user-heart-line",
+  Pulau: "ri-earth-line",
+  Fauna: "ri-bug-line",
+  Gunung: "ri-triangle-line",
+  Budaya: "ri-hourglass-2-fill",
+  Kota: "ri-building-2-line",
+  Ekonomi: "ri-money-dollar-circle-line",
+  Hutan: "ri-tree-line",
+};
 // Data untuk tiap pulau
 const pulauData = [
   {
     id: "Jawa",
-    image: "jawaImageUrl",
     title: "Pulau Jawa",
-    rating: "4.8/5",
-    description: "Pulau dengan pusat budaya dan ekonomi Indonesia.",
-    price: "$50",
+    images: [jawa1, jawa2, jawa3, jawa4, jawa5],
+    description:
+      "Pulau Jawa adalah pulau paling padat penduduknya di Indonesia dan juga pusat ekonomi serta politik negara ini. Terletak di antara Pulau Sumatra dan Bali, Jawa memiliki ibu kota Jakarta, yang merupakan kota terbesar di Indonesia. Pulau ini dikenal dengan kombinasi antara keindahan alam, seperti gunung berapi aktif dan pantai, serta perkembangan urban yang pesat. Jawa juga memiliki sejarah budaya yang kaya, dengan situs-situs bersejarah seperti Candi Borobudur dan Prambanan, serta tradisi seni dan kuliner yang khas.",
     tags: ["Budaya", "Kota", "Ekonomi", "Alam"],
   },
   {
+    id: "Kalimantan",
+    images: [kalimantan1, kalimantan2, kalimantan3, kalimantan4, kalimantan5],
+    title: "Pulau Kalimantan",
+    description:
+      "Pulau Kalimantan, juga dikenal sebagai Borneo, adalah pulau terbesar ketiga di dunia yang terletak di Asia Tenggara. Pulau ini terbagi menjadi tiga wilayah negara: Indonesia (Kalimantan), Malaysia, dan Brunei. Kalimantan terkenal dengan kekayaan alamnya, seperti hutan hujan tropis yang menjadi rumah bagi berbagai flora dan fauna endemik, termasuk orangutan. Pulau ini juga kaya akan sumber daya alam seperti batu bara dan minyak bumi, serta memiliki budaya yang beragam dari suku-suku asli seperti Dayak. Kalimantan adalah surga bagi pencinta alam dan petualangan.",
+    tags: ["Alam", "Fauna", "Diving", "Pulau"],
+  },
+  {
     id: "Sumatera",
-    image: "sumateraImageUrl",
     title: "Pulau Sumatera",
-    rating: "4.6/5",
-    description: "Pulau dengan keindahan alam dan kekayaan budaya.",
-    price: "$60",
+    images: [sumatera1, sumatera2, sumatera3, sumatera4, sumatera5],
+    description:
+      "Pulau Sumatra adalah pulau terbesar keenam di dunia yang terletak di sebelah barat Indonesia. Dikenal dengan kekayaan alamnya, Sumatra memiliki hutan tropis, danau-danau besar seperti Danau Toba, serta gunung berapi aktif. Pulau ini juga merupakan habitat bagi berbagai spesies langka, seperti harimau sumatra dan orangutan. Selain itu, Sumatra memiliki budaya yang beragam dengan suku-suku seperti Aceh, Minangkabau, dan Batak. Ekonomi Sumatra didorong oleh pertanian, terutama perkebunan kelapa sawit, kopi, dan karet. Sumatra juga terkenal dengan keindahan alamnya yang memukau, baik di daratan maupun bawah laut.",
     tags: ["Hutan", "Gunung", "Budaya", "Pulau"],
   },
   {
-    id: "Kalimantan",
-    image: "kalimantanImageUrl",
-    title: "Pulau Kalimantan",
-    rating: "4.7/5",
-    description: "Surga bagi para pecinta hutan hujan dan satwa liar.",
-    price: "$70",
-    tags: ["Hutan", "Satwa", "Adventure", "Pulau"],
+    id: "Sulawesi",
+    title: "Pulau Sulawesi",
+    images: [sulawesi1, sulawesi2, sulawesi3, sulawesi4, sulawesi5],
+    description:
+      "Pulau Sulawesi, atau Celebes, terletak di Indonesia bagian timur dan dikenal dengan bentuknya yang unik, seperti huruf K. Pulau ini memiliki keanekaragaman budaya dan alam yang luar biasa, mulai dari pegunungan yang memukau hingga pantai dan terumbu karang yang indah. Sulawesi juga rumah bagi berbagai spesies endemik, seperti anoa dan tarsius. Budaya Sulawesi sangat beragam, dengan suku-suku seperti Bugis, Makassar, dan Toraja yang memiliki tradisi dan adat istiadat yang kuat. Selain itu, Sulawesi kaya akan sumber daya alam, termasuk hasil laut dan pertanian.",
+    tags: ["Hutan", "Laut", "Budaya", "Pulau"],
   },
-  // Tambahkan data lainnya untuk Sulawesi, Papua, Maluku, dll.
+  {
+    id: "Maluku",
+    title: "Pulau Maluku",
+    images: [maluku1, maluku2, maluku3, maluku4, maluku5],
+    description:
+      "Pulau Maluku, sering disebut sebagai Kepulauan Maluku, adalah gugusan pulau di Indonesia timur yang terkenal sebagai Pulau Rempah karena sejarahnya sebagai penghasil rempah-rempah seperti pala dan cengkeh. Maluku memiliki keindahan alam yang memukau, mulai dari pantai berpasir putih, perairan jernih, hingga terumbu karang yang kaya akan biodiversitas. Pulau ini juga merupakan rumah bagi berbagai suku dan budaya, dengan tradisi dan seni yang khas. Maluku menawarkan perpaduan sejarah, budaya, dan alam yang memikat.",
+    tags: ["Hutan", "Laut", "Budaya", "Pulau"],
+  },
+  {
+    id: "NTTBALI",
+    title: "Pulau Bali & Nusa Tenggara",
+    images: [bali1, bali2, bali3, bali4, bali5],
+    description:
+      "Pulau Bali dan Nusa Tenggara terletak di bagian selatan Indonesia dan dikenal dengan keindahan alam serta budayanya yang unik. Bali, sebagai Pulau Dewata, menawarkan pantai eksotis, seni budaya Hindu yang khas, dan destinasi terkenal seperti Ubud, Kuta, dan Pura Besakih. Sementara itu, Nusa Tenggara, yang mencakup Nusa Tenggara Barat (NTB) dan Nusa Tenggara Timur (NTT), dikenal dengan kekayaan alam seperti Gunung Rinjani, Pantai Pink, dan Pulau Komodo. Kedua wilayah ini memikat wisatawan dengan perpaduan budaya yang kaya dan panorama yang memukau.",
+    tags: ["Gunung", "Laut", "Budaya", "Pulau"],
+  },
+  {
+    id: "Papua",
+    title: "Pulau Papua",
+    images: [papua1, papua2, papua3, papua4, papua5],
+    description:
+      "Pulau Papua adalah pulau terbesar di Indonesia yang terletak di bagian timur dan berbatasan langsung dengan Papua Nugini. Pulau ini dikenal dengan keanekaragaman hayati yang luar biasa, termasuk hutan hujan tropis yang menjadi rumah bagi flora dan fauna endemik, seperti burung cenderawasih. Papua juga memiliki lanskap yang memukau, mulai dari Pegunungan Jayawijaya dengan puncak saljunya hingga perairan indah di Raja Ampat. Budaya Papua sangat kaya dengan berbagai suku asli yang memiliki tradisi unik dan seni ukir khas. Pulau ini adalah surga alam dan budaya yang tak tertandingi.",
+    tags: ["Gunung", "Laut", "Budaya", "Pulau"],
+  },
 ];
 
 const Map: React.FC = () => {
@@ -308,10 +391,10 @@ const Map: React.FC = () => {
 
           {/* nusa tenggaraa */}
           <g
-            id="Nusa_Tenggara"
-            name="Nusa_Tenggara"
+            id="NTTBALI"
+            name="NTTBALI"
             className="group hover:fill-yellow-300 transition duration-300 ease-in-out cursor-pointer"
-            onClick={() => handlePulauClick("BaliNT")}
+            onClick={() => handlePulauClick("NTTBALI")}
           >
             <path
               id="id-ba"
@@ -330,31 +413,104 @@ const Map: React.FC = () => {
             />
           </g>
         </svg>
-        ;
       </div>
       {/* Overlay dengan animasi */}
       {selectedPulau && (
         <div
-          className="fixed inset-0 z-50 bg-black backdrop-blur-sm bg-opacity-50 flex items-center justify-center duration-300 ease-in-out"
+          className="fixed inset-0 z-50 bg-black backdrop-blur-sm bg-opacity-50 flex items-center justify-center duration-300 ease-in-out w-full p-16"
           onClick={closeOverlay}
         >
           <div
-            className="bg-white rounded-xl p-10 w-96 transform scale-0 opacity-0 animate-popup"
+            className="bg-white rounded-xl p-6 w-full max-w-3xl transform scale-0 opacity-0 animate-popup"
             id="overlay"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="header flex flex-col gap-4">
-              <img
-                src={selectedPulau.image}
-                alt={selectedPulau.title}
-                className="w-full h-48 object-cover rounded-lg"
-              />
-              <h1 className="font-semibold text-black text-3xl">
+            <div className="header flex flex-col w-full">
+              <div className="grid grid-cols-5 grid-rows-4 gap-3 mb-4">
+                {/* Gambar 1 */}
+                <div className="col-span-2 row-span-4">
+                  {selectedPulau?.images?.[0] && (
+                    <img
+                      src={selectedPulau.images[0]}
+                      className="object-cover w-full h-full rounded-lg"
+                      alt={`Gambar ${selectedPulau.title} 1`}
+                    />
+                  )}
+                </div>
+                {/* Gambar 2 */}
+                <div className="col-span-2 row-span-2 col-start-3">
+                  {selectedPulau?.images?.[1] && (
+                    <img
+                      src={selectedPulau.images[1]}
+                      className="object-cover w-full h-full rounded-lg"
+                      alt={`Gambar ${selectedPulau.title} 2`}
+                    />
+                  )}
+                </div>
+                {/* Gambar 3 */}
+                <div className="row-span-2 col-start-3 row-start-3">
+                  {selectedPulau?.images?.[2] && (
+                    <img
+                      src={selectedPulau.images[2]}
+                      className="object-cover w-full h-full rounded-lg"
+                      alt={`Gambar ${selectedPulau.title} 3`}
+                    />
+                  )}
+                </div>
+                {/* Gambar 4 */}
+                <div className="col-span-2 row-span-2 col-start-4 row-start-3">
+                  {selectedPulau?.images?.[3] && (
+                    <img
+                      src={selectedPulau.images[3]}
+                      className="object-cover w-full h-full rounded-lg"
+                      alt={`Gambar ${selectedPulau.title} 4`}
+                    />
+                  )}
+                </div>
+                {/* Gambar 5 */}
+                <div className="row-span-2 col-start-5 row-start-1">
+                  {selectedPulau?.images?.[4] && (
+                    <img
+                      src={selectedPulau.images[4]}
+                      className="object-cover w-full h-full rounded-lg"
+                      alt={`Gambar ${selectedPulau.title} 5`}
+                    />
+                  )}
+                </div>
+                {/* Gambar 6 */}
+                <div className="row-span-2 col-start-5 row-start-3">
+                  {selectedPulau?.images?.[5] && (
+                    <img
+                      src={selectedPulau.images[5]}
+                      className="object-cover w-full h-full rounded-lg"
+                      alt={`Gambar ${selectedPulau.title} 6`}
+                    />
+                  )}
+                </div>
+              </div>
+
+              <h1 className="font-semibold text-black text-3xl m-0">
                 {selectedPulau.title}
               </h1>
-              <p className="text-gray-600">{selectedPulau.description}</p>
+              <p className="text-gray-600 text-sm">
+                {selectedPulau.description}
+              </p>
+              <div className="badge flex flex-wrap gap-2 my-3 items-center">
+                <p className="text-sm font-medium">Tag : </p>
+                {selectedPulau?.tags.map((tag, tagIndex) => (
+                  <div
+                    key={tagIndex}
+                    className="tag flex items-center gap-1 border-gray-900 border py-1 px-3 rounded-full max-w-[200px] truncate"
+                  >
+                    <i
+                      className={`${iconPulau[tag] || "ri-star-line"} ri-xs`}
+                    ></i>
+                    <p className="text-xs truncate">{tag}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="garis w-full h-[2px] rounded-full bg-black my-4"></div>
+            <div className="garis w-full h-[1px] rounded-full bg-gray-500 my-4"></div>
             <div className="action flex w-full items-end justify-end">
               <button
                 className="bg-red-500 px-4 py-2 rounded-lg text-white duration-150 hover:bg-red-700"

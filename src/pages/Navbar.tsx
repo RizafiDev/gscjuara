@@ -65,7 +65,6 @@ function Navbar() {
           <h6 className="">Register</h6>
         </div>
       </div>
-      <div className="dropdown container" id="dropdown-container"></div>
     </nav>
   );
 }
