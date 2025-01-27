@@ -1,7 +1,4 @@
-"use client";
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { LampContainer } from "@/components/ui/lamp";
 // img kalimantan
 import kalimantan1 from "../assets/images/maps/kalimantan/1.jpg";
 import kalimantan2 from "../assets/images/maps/kalimantan/2.jpg";
@@ -44,6 +41,9 @@ import papua2 from "../assets/images/maps/papua/2.jpg";
 import papua3 from "../assets/images/maps/papua/3.jpg";
 import papua4 from "../assets/images/maps/papua/4.jpg";
 import papua5 from "../assets/images/maps/papua/5.jpg";
+
+// hiasan
+import line from "../assets/hiasan/line.png";
 
 const iconPulau: Record<string, string> = {
   Laut: "ri-water-flash-line",
@@ -144,37 +144,15 @@ const Map: React.FC = () => {
 
   return (
     <div
-      className="container w-full bg-blue-600 items-center justify-center mx-auto px-40 relative flex flex-col gap-24 py-24"
+      className="container w-full  items-center justify-center mx-auto md:px-40 relative flex flex-col gap-14 md:gap-24 md:py-24 py-16 px-4"
       id="map"
     >
-      {/* tesss */}
-      <div
-        className="overlayyyyyy absolute w-full h-screen container bg-black backdrop-blur-sm bg-opacity-50 p-24 hidden duration-200 ease-in-out "
-        id="efek-blur"
-        onClick={closeOverlay}
-      >
-        <div
-          className="parent w-full  bg-white rounded-xl p-10 flex flex-col scale-0 duration-200 ease-in-out "
-          id="overlay"
-        >
-          <div className="header flex flex-col gap-4">
-            <h1 className="font-semibold text-black text-3xl">Pulau Jawa</h1>
-          </div>
-          <div className="garis w-full h-[2px] rounded-full bg-black"></div>
-          <div className="action flex w-full items-end justify-end mt-4">
-            <button
-              className="bg-red-500 px-4 py-2 rounded-lg text-white duration-150 hover:bg-red-700"
-              onClick={closeOverlay}
-            >
-              Tutup
-            </button>
-          </div>
-        </div>
-      </div>
-      {/* tesss */}
+      <img src={line} className="w-full absolute top-0 md:px-40 px-4" alt="" />
       <div className="header flex items-center justify-center w-full flex-col text-white ">
-        <h1 className="font-semibold text-4xl ">Peta Nusantara</h1>
-        <p className="font-medium">Klik pulau untuk informasi</p>
+        <h1 className="font-semibold md:text-4xl text-3xl">Peta Nusantara</h1>
+        <p className="font-medium md:text-base text-sm">
+          Klik pulau untuk informasi
+        </p>
       </div>
       <div className="map w-full">
         <svg
@@ -423,16 +401,16 @@ const Map: React.FC = () => {
       {/* Overlay dengan animasi */}
       {selectedPulau && (
         <div
-          className="fixed inset-0 z-50 bg-black backdrop-blur-sm bg-opacity-50 flex items-center justify-center duration-300 ease-in-out w-full p-16"
+          className="fixed inset-0 z-50 bg-black backdrop-blur-sm bg-opacity-50 flex items-center justify-center duration-300 ease-in-out w-full p-8 md:p-16"
           onClick={closeOverlay}
         >
           <div
-            className="bg-white rounded-xl p-6 w-full max-w-3xl transform scale-0 opacity-0 animate-popup"
+            className="bg-white rounded-xl p-4 md:p-6 w-full max-w-3xl transform scale-0 opacity-0 animate-popup"
             id="overlay"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="header flex flex-col w-full">
-              <div className="grid grid-cols-5 grid-rows-4 gap-3 mb-4">
+              <div className="grid grid-cols-5 grid-rows-4 gap-1 md:gap-3 mb-4">
                 {/* Gambar 1 */}
                 <div className="col-span-2 row-span-4">
                   {selectedPulau?.images?.[0] && (
@@ -495,14 +473,14 @@ const Map: React.FC = () => {
                 </div>
               </div>
 
-              <h1 className="font-semibold text-black text-3xl m-0">
+              <h1 className="font-semibold text-black text-2xl md:text-3xl m-0">
                 {selectedPulau.title}
               </h1>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 md:text-sm text-xs">
                 {selectedPulau.description}
               </p>
               <div className="badge flex flex-wrap gap-2 my-3 items-center">
-                <p className="text-sm font-medium">Tag : </p>
+                <p className="md:text-sm text-xs font-medium">Tag : </p>
                 {selectedPulau?.tags.map((tag, tagIndex) => (
                   <div
                     key={tagIndex}
@@ -511,7 +489,7 @@ const Map: React.FC = () => {
                     <i
                       className={`${iconPulau[tag] || "ri-star-line"} ri-xs`}
                     ></i>
-                    <p className="text-xs truncate">{tag}</p>
+                    <p className="md:text-xs text-[10px] truncate">{tag}</p>
                   </div>
                 ))}
               </div>
