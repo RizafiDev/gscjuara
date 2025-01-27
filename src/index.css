@@ -6,6 +6,7 @@
 * {
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -29,4 +30,10 @@ body {
 
 .animate-popup {
   animation: popup 0.3s ease-out forwards;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
 }

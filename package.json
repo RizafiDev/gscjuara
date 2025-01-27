@@ -11,14 +11,21 @@
   "dependencies": {
     "@svg-maps/indonesia": "^1.0.0",
     "aos": "^3.0.0-beta.6",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.0.5",
     "gsap": "^3.12.7",
+    "lucide-react": "^0.474.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "remixicon": "^4.6.0"
+    "remixicon": "^4.6.0",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
     "@types/aos": "^3.0.7",
+    "@types/node": "^22.10.10",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",

@@ -119,16 +119,16 @@ function Card() {
 
   return (
     <div
-      className="container w-full mx-auto items-center justify-center px-10 md:px-40 flex flex-col gap-8 pb-24"
+      className="container w-full mx-auto items-center justify-center px-4 md:px-40 flex flex-col gap-8 pb-24"
       id="card"
     >
       {/* Header */}
-      <div className="header flex w-full items-center max-md:justify-center md:justify-between">
-        <div className="layer gap-5 flex items-center">
-          <h1 className="font-medium text-white drop-shadow-xl">
+      <div className="header flex w-full items-center  justify-between">
+        <div className="layer md:gap-5 flex md:flex-row flex-col items-start md:items-center gap-2">
+          <h1 className="font-medium text-white drop-shadow-xl text-base">
             Destinasi Favorit
           </h1>
-          <div className="badge text-white bg-gray-800 flex items-center w-fit gap-1 py-2 px-4 rounded-full shadow-xl">
+          <div className="badge text-white bg-gray-800 flex items-center w-fit gap-1 py-2 px-3 md:px-4 rounded-full shadow-xl">
             <i className="ri-star-smile-line ri-xs"></i>
             <p className="text-xs">Pengalaman Terbaik</p>
           </div>
@@ -160,7 +160,7 @@ function Card() {
         {cardData.map((card, index) => (
           <div
             key={index}
-            className="card h-[380px] rounded-[25px] w-72 overflow-hidden p-[6px] bg-gray-900 relative flex-shrink-0"
+            className="card h-[350px] w-64 md:h-[380px] rounded-[25px] md:w-72 overflow-hidden p-[6px] bg-gray-900 relative flex-shrink-0"
             style={{ scrollSnapAlign: "start" }}
           >
             <img
@@ -173,25 +173,29 @@ function Card() {
               <div className="top flex items-center justify-between">
                 <div className="flex items-center text-white bg-gray-900 py-[6px] px-3 rounded-full w-fit text-xs gap-1">
                   <i className="ri-star-fill"></i>
-                  <p>{card.rating}</p>
+                  <p className="md:text-base text-xs">{card.rating}</p>
                 </div>
                 <div className="p-2 w-8 h-8 rounded-full bg-gray-900 flex items-center justify-center">
                   <i className="ri-heart-2-line text-white"></i>
                 </div>
               </div>
               <div className="desc text-white flex flex-col items-start mb-2">
-                <h1 className="text-lg font-medium">{card.title}</h1>
-                <p className="text-xs max-w-56">{card.description}</p>
-                <div className="badge flex flex-wrap gap-2 my-3">
+                <h1 className="md:text-lg text-base font-medium">
+                  {card.title}
+                </h1>
+                <p className="md:text-xs text-[10px] max-w-56">
+                  {card.description}
+                </p>
+                <div className="badge flex flex-wrap gap-2 my-3 w-full">
                   {card.tags.map((tag, tagIndex) => (
                     <div
                       key={tagIndex}
-                      className="tag flex items-center gap-1 bg-gray-700 py-1 px-3 rounded-full max-w-[200px] truncate"
+                      className="tag flex items-center justify-center gap-1 bg-gray-700 py-1 px-3 rounded-full max-w-[200px] truncate"
                     >
                       <i
                         className={`${iconMap[tag] || "ri-star-line"} ri-xs`}
                       ></i>
-                      <p className="text-xs truncate">{tag}</p>
+                      <p className="md:text-xs text-[10px] truncate">{tag}</p>
                     </div>
                   ))}
                 </div>

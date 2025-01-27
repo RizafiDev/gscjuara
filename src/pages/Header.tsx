@@ -10,18 +10,18 @@ function Header() {
 
   return (
     <div
-      className="container mx-auto w-full items-center justify-center min-h-[650px] flex flex-col gap-6 pt-20"
+      className="container mx-auto md:px-0 px-4 w-full items-center justify-center  md:min-h-[650px] flex flex-col gap-4 md:gap-6 pb-12 pt-28"
       id="header"
     >
-      <h1 className="text-white text-5xl font-semibold max-w-[800px] text-center drop-shadow-lg">
+      <h1 className="text-white text-3xl md:text-5xl font-semibold max-w-[800px] text-center drop-shadow-lg overflow-y-hidden">
         Temukan Surga Tersembunyi Wisata Nusantara
       </h1>
-      <p className="max-w-[600px] text-center font-medium text-white drop-shadow-lg">
+      <p className="md:max-w-[600px] md:text-base text-xs text-center font-medium text-white drop-shadow-lg">
         "Indonesia, negeri penuh pesona dengan destinasi wisata menakjubkan.
         Dari pantai tropis hingga pegunungan megah, temukan keajaiban yang
         menanti untuk dijelajahi."
       </p>
-      <div className="action text-white flex bg-gray-800 p-2 rounded-full shadow-xl">
+      <div className="action text-white flex bg-gray-800 p-2 rounded-full shadow-xl w-full md:w-fit justify-between">
         <button
           className={`flex items-center gap-1 py-3 px-6 rounded-full text-xs duration-200 ${
             activeButton === "beach"

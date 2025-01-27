@@ -1,4 +1,7 @@
+"use client";
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { LampContainer } from "@/components/ui/lamp";
 // img kalimantan
 import kalimantan1 from "../assets/images/maps/kalimantan/1.jpg";
 import kalimantan2 from "../assets/images/maps/kalimantan/2.jpg";
@@ -141,17 +144,17 @@ const Map: React.FC = () => {
 
   return (
     <div
-      className="container w-full  items-center justify-center mx-auto px-40 relative flex flex-col gap-24 py-24"
+      className="container w-full bg-blue-600 items-center justify-center mx-auto px-40 relative flex flex-col gap-24 py-24"
       id="map"
     >
       {/* tesss */}
       <div
-        className="overlayyyyyy absolute w-full h-screen container bg-black backdrop-blur-sm bg-opacity-50 p-24 hidden duration-200 ease-in-out"
+        className="overlayyyyyy absolute w-full h-screen container bg-black backdrop-blur-sm bg-opacity-50 p-24 hidden duration-200 ease-in-out "
         id="efek-blur"
         onClick={closeOverlay}
       >
         <div
-          className="parent w-full  bg-white rounded-xl p-10 flex flex-col scale-0 duration-200 ease-in-out"
+          className="parent w-full  bg-white rounded-xl p-10 flex flex-col scale-0 duration-200 ease-in-out "
           id="overlay"
         >
           <div className="header flex flex-col gap-4">
@@ -171,7 +174,7 @@ const Map: React.FC = () => {
       {/* tesss */}
       <div className="header flex items-center justify-center w-full flex-col text-white ">
         <h1 className="font-semibold text-4xl ">Peta Nusantara</h1>
-        <p className="font-medium">Klik pulau untuk infromasi</p>
+        <p className="font-medium">Klik pulau untuk informasi</p>
       </div>
       <div className="map w-full">
         <svg
@@ -184,7 +187,7 @@ const Map: React.FC = () => {
           <g
             id="Jawa"
             name="Jawa"
-            className="group hover:fill-yellow-300 transition duration-300 ease-in-out cursor-pointer"
+            className="group hover:fill-yellow-300 transition duration-300 ease-in-out cursor-pointer hover:-translate-y-1 hover:drop-shadow-lg shadow-black"
             onClick={() => handlePulauClick("Jawa")}
           >
             <path
@@ -223,7 +226,7 @@ const Map: React.FC = () => {
           <g
             id="Sumatera"
             name="Sumatera"
-            className="group hover:fill-yellow-300 transition duration-300 ease-in-out cursor-pointer"
+            className="group hover:fill-yellow-300 transition duration-300 ease-in-out cursor-pointer hover:-translate-y-1 hover:drop-shadow-lg shadow-black"
             onClick={() => handlePulauClick("Sumatera")}
           >
             <path
@@ -282,7 +285,7 @@ const Map: React.FC = () => {
           <g
             id="Kalimantan"
             name="Kalimantan"
-            className="group hover:fill-yellow-300 transition duration-300 ease-in-out cursor-pointer"
+            className="group hover:fill-yellow-300 transition duration-300 ease-in-out cursor-pointer hover:-translate-y-1 hover:drop-shadow-lg shadow-black"
             onClick={() => handlePulauClick("Kalimantan")}
           >
             <path
@@ -317,7 +320,7 @@ const Map: React.FC = () => {
           <g
             id="Sulawesi"
             name="Sulawesi"
-            className="group hover:fill-yellow-300 transition duration-300 ease-in-out cursor-pointer"
+            className="group hover:fill-yellow-300 transition duration-300 ease-in-out cursor-pointer hover:-translate-y-1 hover:drop-shadow-lg shadow-black"
             onClick={() => handlePulauClick("Sulawesi")}
           >
             <path
@@ -358,7 +361,7 @@ const Map: React.FC = () => {
           <g
             id="Papua"
             name="Papua"
-            className="group hover:fill-yellow-300 transition duration-300 ease-in-out cursor-pointer"
+            className="group hover:fill-yellow-300 transition duration-300 ease-in-out cursor-pointer hover:-translate-y-1 hover:drop-shadow-lg shadow-black"
             onClick={() => handlePulauClick("Papua")}
           >
             <path
@@ -377,7 +380,7 @@ const Map: React.FC = () => {
           <g
             id="Maluku"
             name="Maluku"
-            className="group hover:fill-yellow-300 transition duration-300 ease-in-out cursor-pointer"
+            className="group hover:fill-yellow-300 transition duration-300 ease-in-out cursor-pointer hover:-translate-y-1 hover:drop-shadow-lg shadow-black"
             onClick={() => handlePulauClick("Maluku")}
           >
             <path
@@ -396,7 +399,7 @@ const Map: React.FC = () => {
           <g
             id="NTTBALI"
             name="NTTBALI"
-            className="group hover:fill-yellow-300 transition duration-300 ease-in-out cursor-pointer"
+            className="group hover:fill-yellow-300 transition duration-300 ease-in-out cursor-pointer hover:-translate-y-1 hover:drop-shadow-lg shadow-black"
             onClick={() => handlePulauClick("NTTBALI")}
           >
             <path
