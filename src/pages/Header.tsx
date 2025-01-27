@@ -9,7 +9,10 @@ function Header() {
   };
 
   return (
-    <div className="container mx-auto w-full items-center justify-center min-h-[650px] flex flex-col gap-6 pt-20">
+    <div
+      className="container mx-auto w-full items-center justify-center min-h-[650px] flex flex-col gap-6 pt-20"
+      id="header"
+    >
       <h1 className="text-white text-5xl font-semibold max-w-[800px] text-center drop-shadow-lg">
         Temukan Surga Tersembunyi Wisata Nusantara
       </h1>

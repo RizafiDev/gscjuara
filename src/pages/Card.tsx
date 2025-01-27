@@ -55,7 +55,8 @@ const cardData = [
     image: toba,
     title: "Danau Toba",
     rating: "4.5/5",
-    description: "Danau vulkanik terbesar di Indonesia dengan pulau Samosir di tengahnya.",
+    description:
+      "Danau vulkanik terbesar di Indonesia dengan pulau Samosir di tengahnya.",
     price: "$50",
     tags: ["Gunung", "Alam", "Family"],
   },
@@ -63,15 +64,17 @@ const cardData = [
     image: ijen,
     title: "Kawah Ijen",
     rating: "4.8/5",
-    description: "Rasakan keajaiban api biru dan pemandangan kawah belerang yang memukau.",
+    description:
+      "Rasakan keajaiban api biru dan pemandangan kawah belerang yang memukau.",
     price: "$50",
-    tags: ["Gunung", "Alam", "Family",],
+    tags: ["Gunung", "Alam", "Family"],
   },
   {
     image: sentani,
     title: "Danau Sentani",
     rating: "4.2/5",
-    description: "Nikmati keindahan danau yang dikelilingi oleh 21 pulau kecil.",
+    description:
+      "Nikmati keindahan danau yang dikelilingi oleh 21 pulau kecil.",
     price: "$50",
     tags: ["Alam", "Family"],
   },
@@ -115,7 +118,10 @@ function Card() {
   }, []);
 
   return (
-    <div className="container w-full mx-auto items-center justify-center px-10 md:px-40 flex flex-col gap-8 pb-24">
+    <div
+      className="container w-full mx-auto items-center justify-center px-10 md:px-40 flex flex-col gap-8 pb-24"
+      id="card"
+    >
       {/* Header */}
       <div className="header flex w-full items-center max-md:justify-center md:justify-between">
         <div className="layer gap-5 flex items-center">
@@ -177,16 +183,18 @@ function Card() {
                 <h1 className="text-lg font-medium">{card.title}</h1>
                 <p className="text-xs max-w-56">{card.description}</p>
                 <div className="badge flex flex-wrap gap-2 my-3">
-                    {card.tags.map((tag, tagIndex) => (
-                   <div
-                       key={tagIndex}
-                       className="tag flex items-center gap-1 bg-gray-700 py-1 px-3 rounded-full max-w-[200px] truncate"
-                      >
-                      <i className={`${iconMap[tag] || "ri-star-line"} ri-xs`}></i>
-                         <p className="text-xs truncate">{tag}</p>
-                       </div>
-                      ))}
-                      </div>
+                  {card.tags.map((tag, tagIndex) => (
+                    <div
+                      key={tagIndex}
+                      className="tag flex items-center gap-1 bg-gray-700 py-1 px-3 rounded-full max-w-[200px] truncate"
+                    >
+                      <i
+                        className={`${iconMap[tag] || "ri-star-line"} ri-xs`}
+                      ></i>
+                      <p className="text-xs truncate">{tag}</p>
+                    </div>
+                  ))}
+                </div>
                 <div className="harga text-2xl">
                   {card.price}
                   <span className="text-gray-400 text-sm">/orang</span>

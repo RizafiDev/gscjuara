@@ -140,7 +140,10 @@ const Map: React.FC = () => {
   }, [selectedPulau]);
 
   return (
-    <div className="container w-full  items-center justify-center mx-auto px-40 relative flex flex-col gap-24 py-24">
+    <div
+      className="container w-full  items-center justify-center mx-auto px-40 relative flex flex-col gap-24 py-24"
+      id="map"
+    >
       {/* tesss */}
       <div
         className="overlayyyyyy absolute w-full h-screen container bg-black backdrop-blur-sm bg-opacity-50 p-24 hidden duration-200 ease-in-out"
