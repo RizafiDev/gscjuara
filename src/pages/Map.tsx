@@ -144,11 +144,11 @@ const Map: React.FC = () => {
 
   return (
     <div
-      className="container w-full  items-center justify-center mx-auto md:px-40 relative flex flex-col gap-14 md:gap-24 md:py-24 py-16 px-4"
+      className="container w-full bg-gray-900 dark:bg-white items-center justify-center mx-auto md:px-40 relative flex flex-col gap-14 md:gap-24 md:py-24 py-16 px-4"
       id="map"
     >
       <img src={line} className="w-full absolute top-0 md:px-40 px-4" alt="" />
-      <div className="header flex items-center justify-center w-full flex-col text-white ">
+      <div className="header flex items-center justify-center w-full flex-col text-white dark:text-black">
         <h1 className="font-semibold md:text-4xl text-3xl">Peta Nusantara</h1>
         <p className="font-medium md:text-base text-sm">
           Klik pulau untuk informasi
@@ -159,7 +159,7 @@ const Map: React.FC = () => {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 29 793 288"
           aria-label="Map of Indonesia"
-          className="group fill-white"
+          className="group fill-white dark:fill-black"
         >
           {/* jawaaa */}
           <g

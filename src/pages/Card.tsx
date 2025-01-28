@@ -128,24 +128,24 @@ function Card() {
           <h1 className="font-medium text-white drop-shadow-xl text-base">
             Destinasi Favorit
           </h1>
-          <div className="badge text-white bg-gray-800 flex items-center w-fit gap-1 py-2 px-3 md:px-4 rounded-full shadow-xl">
+          <div className="badge text-white dark:text-black dark:bg-white bg-gray-800 flex items-center w-fit gap-1 py-2 px-3 md:px-4 rounded-full shadow-xl">
             <i className="ri-star-smile-line ri-xs"></i>
             <p className="text-xs">Pengalaman Terbaik</p>
           </div>
         </div>
-        <div className="navigation flex items-center bg-white rounded-full p-2 h-8 text-gray-800">
+        <div className="navigation flex items-center bg-gray-800 dark:bg-white rounded-full p-2 h-8 ">
           <button
             onClick={() => scrollContainer("left")}
-            className="p-2 rounded-full transition-all hover:bg-gray-200"
+            className="p-2 rounded-full transition-all dark:hover:bg-gray-200 dark:text-black text-white"
           >
-            <i className="ri-arrow-left-s-line ri-xl text-gray-800"></i>
+            <i className="ri-arrow-left-s-line ri-xl "></i>
           </button>
-          <div className="h-4 rounded-full w-[2px] bg-gray-800 mx-2"></div>
+          <div className="h-4 rounded-full w-[2px] bg-white mx-2 dark:bg-black"></div>
           <button
             onClick={() => scrollContainer("right")}
-            className="p-2 rounded-full transition-all hover:bg-gray-200"
+            className="p-2 rounded-full transition-all dark:hover:bg-gray-200 dark:text-black text-white"
           >
-            <i className="ri-arrow-right-s-line ri-xl text-gray-800"></i>
+            <i className="ri-arrow-right-s-line ri-xl "></i>
           </button>
         </div>
       </div>
@@ -160,7 +160,7 @@ function Card() {
         {cardData.map((card, index) => (
           <div
             key={index}
-            className="card h-[350px] w-64 md:h-[380px] rounded-[25px] md:w-72 overflow-hidden p-[6px] bg-gray-900 relative flex-shrink-0"
+            className="card h-[350px] w-64 md:h-[380px] rounded-[25px] md:w-72 overflow-hidden p-[6px] bg-gray-900 dark:bg-white relative flex-shrink-0"
             style={{ scrollSnapAlign: "start" }}
           >
             <img
@@ -168,29 +168,29 @@ function Card() {
               alt={card.title}
               className="w-full h-full object-cover rounded-[19px]"
             />
-            <div className="absolute bottom-0 left-0 right-0 h-[800px] bg-gradient-to-t from-gray-900 via-transparent to-transparent rounded-[19px]"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-[800px] dark:h-[220px] bg-gradient-to-t from-gray-900 dark:from-white via-transparent to-transparent rounded-[19px]"></div>
             <div className="text absolute bottom-0 p-4 left-0 right-0 w-full h-full flex flex-col justify-between">
               <div className="top flex items-center justify-between">
-                <div className="flex items-center text-white bg-gray-900 py-[6px] px-3 rounded-full w-fit text-xs gap-1">
+                <div className="flex items-center text-white dark:text-black bg-gray-900 dark:bg-white py-[6px] px-3 rounded-full w-fit text-xs gap-1">
                   <i className="ri-star-fill"></i>
                   <p className="md:text-base text-xs">{card.rating}</p>
                 </div>
-                <div className="p-2 w-8 h-8 rounded-full bg-gray-900 flex items-center justify-center">
-                  <i className="ri-heart-2-line text-white"></i>
+                <div className="p-2 w-8 h-8 rounded-full bg-gray-900 dark:bg-white dark:text-black text-white flex items-center justify-center">
+                  <i className="ri-heart-2-line "></i>
                 </div>
               </div>
               <div className="desc text-white flex flex-col items-start mb-2">
-                <h1 className="md:text-lg text-base font-medium">
+                <h1 className="md:text-lg text-base font-medium dark:drop-shadow-xl">
                   {card.title}
                 </h1>
-                <p className="md:text-xs text-[10px] max-w-56">
+                <p className="md:text-xs text-[10px] max-w-56 dark:drop-shadow-xl">
                   {card.description}
                 </p>
                 <div className="badge flex flex-wrap gap-2 my-3 w-full">
                   {card.tags.map((tag, tagIndex) => (
                     <div
                       key={tagIndex}
-                      className="tag flex items-center justify-center gap-1 bg-gray-700 py-1 px-3 rounded-full max-w-[200px] truncate"
+                      className="tag flex items-center text-white dark:text-black justify-center gap-1 bg-gray-700 dark:bg-white dark:shadow-inner dark:shadow-gray-400 py-1 px-3 rounded-full max-w-[200px] truncate"
                     >
                       <i
                         className={`${iconMap[tag] || "ri-star-line"} ri-xs`}
@@ -199,9 +199,11 @@ function Card() {
                     </div>
                   ))}
                 </div>
-                <div className="harga text-2xl">
+                <div className="harga text-2xl text-white dark:text-black">
                   {card.price}
-                  <span className="text-gray-400 text-sm">/orang</span>
+                  <span className="text-gray-400 dark:text-gray-800 text-sm">
+                    /orang
+                  </span>
                 </div>
               </div>
             </div>

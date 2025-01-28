@@ -79,9 +79,9 @@ const ratingData = [
 
 const Rating = () => {
   return (
-    <div className="container relative md:px-40 px-4 flex flex-col w-full items-center justify-center py-20 md:gap-16 gap-8">
+    <div className="container relative md:px-40 px-4 flex flex-col w-full items-center justify-center py-20 md:gap-16 gap-8 mx-auto bg-gray-900 dark:bg-white">
       <img src={line} className="w-full absolute top-0 md:px-40 px-4" alt="" />
-      <div className="header flex flex-col items-start text-start w-full text-white">
+      <div className="header flex flex-col items-start text-start w-full text-white dark:text-black">
         <h1 className="md:text-3xl text-2xl font-semibold">
           Rating Pengunjung
         </h1>
@@ -89,11 +89,11 @@ const Rating = () => {
       </div>
 
       <div className="rating-container w-full overflow-x-auto pb-4">
-        <div className="rating-wrapper flex gap-6 snap-x snap-mandatory overflow-x-auto">
+        <div className="rating-wrapper flex gap-6 snap-x snap-mandatory overflow-x-auto ">
           {ratingData.map((rating, index) => (
             <div
               key={index}
-              className="rating flex-none snap-center w-96 md:w-[600px] bg-white p-4 md:p-8 md:rounded-3xl rounded-xl md:gap-6 gap-4 flex flex-col"
+              className="rating flex-none snap-center w-96 md:w-[600px] bg-gray-900 border border-gray-600 dark:border-none dark:bg-white dark:shadow-inner dark:shadow-gray-400  p-4 md:p-8 md:rounded-3xl rounded-xl md:gap-6 gap-4 flex flex-col"
             >
               <div className="top flex items-center justify-between w-full">
                 <div className="name flex items-center gap-3">
@@ -102,17 +102,17 @@ const Rating = () => {
                     alt={rating.name}
                     className="md:w-16 md:h-16 object-cover rounded-full w-12 h-12"
                   />
-                  <p className="text-start font-semibold md:text-2xl text-lg text-gray-800">
+                  <p className="text-start font-semibold md:text-2xl text-lg text-white dark:text-black">
                     {rating.name}
                   </p>
                 </div>
-                <p className="As font-medium md:text-lg text-sm text-blue-500 uppercase">
+                <p className="As font-medium md:text-lg text-sm text-blue-500  uppercase">
                   {rating.role}
                 </p>
               </div>
 
               <div className="star">
-                <ul className="flex items-center text-blue-500">
+                <ul className="flex items-center text-blue-500 ">
                   {[...Array(5)].map((_, i) => (
                     <li key={i}>
                       <i
@@ -125,11 +125,11 @@ const Rating = () => {
                 </ul>
               </div>
 
-              <p className="kritik w-full items-start text-start md:text-xl text-lg font-medium">
+              <p className="kritik w-full items-start text-start md:text-xl text-lg font-medium text-white dark:text-black">
                 {rating.comment}
               </p>
 
-              <p className="source w-full text-end text-sm md:text-lg font-medium">
+              <p className="source w-full text-end text-sm md:text-lg font-medium text-white dark:text-black">
                 Source : {rating.source}
               </p>
             </div>

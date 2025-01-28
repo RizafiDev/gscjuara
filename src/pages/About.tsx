@@ -2,11 +2,14 @@ import hiasan from "../assets/hiasan.png";
 import wave from "../assets/wave.png";
 function About() {
   return (
-    <div className="relative container w-full flex mx-auto" id="about">
+    <div
+      className="relative container w-full flex mx-auto  bg-gray-900 dark:bg-white"
+      id="about"
+    >
       <div className="absolute w-full md:-mt-[600px]">
         <img src={wave} alt="" className="w-full -mt-40 md:mt-4" />
       </div>
-      <div className="header text-white px-4 z-10 md:px-40 py-24 md:mt-28 flex md:flex-row gap-8 flex-col md:items-center justify-between w-full">
+      <div className="header text-white dark:text-black px-4 z-10 lg:px-40 py-24 md:mt-28 flex md:flex-row gap-8 flex-col md:items-center justify-between w-full">
         <img src={hiasan} alt="" className="max-w-56 md:hidden flex" />
         <div className="paragraph flex flex-col items-start justify-center gap-3 md:gap-6">
           <h1 className="font-semibold text-3xl md:text-4xl">
