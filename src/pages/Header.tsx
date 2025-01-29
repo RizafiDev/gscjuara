@@ -21,7 +21,7 @@ function Header() {
         Dari pantai tropis hingga pegunungan megah, temukan keajaiban yang
         menanti untuk dijelajahi."
       </p>
-      <div className="action text-white dark:text-black flex bg-gray-800 dark:bg-white  p-2 rounded-full shadow-xl w-full md:w-fit justify-between">
+      <div className="action sticky top-10 text-white dark:text-black flex bg-gray-800 dark:bg-white  p-2 rounded-full shadow-xl w-full md:w-fit justify-between">
         <button
           className={`flex items-center gap-1 py-3 px-6 rounded-full text-xs duration-200 ${
             activeButton === "beach"

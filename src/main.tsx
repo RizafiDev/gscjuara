@@ -13,6 +13,7 @@ import About from "./pages/About";
 import Map from "./pages/Map";
 import Navchild from "./pages/Navchild";
 import Rating from "./pages/Rating";
+import Musim from "./pages/Musim";
 
 AOS.init();
 
@@ -26,6 +27,7 @@ createRoot(document.getElementById("root")!).render(
       <Card />
       <About />
       <Map />
+      <Musim />
       <Rating />
     </Background>
   </StrictMode>

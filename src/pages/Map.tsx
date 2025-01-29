@@ -144,7 +144,7 @@ const Map: React.FC = () => {
 
   return (
     <div
-      className="container w-full bg-gray-900 dark:bg-white items-center justify-center mx-auto md:px-40 relative flex flex-col gap-14 md:gap-24 md:py-24 py-16 px-4"
+      className="container w-full bg-gray-900 dark:bg-white items-center justify-center mx-auto lg:px-40 relative flex flex-col gap-14 md:gap-24 md:py-24 py-16 px-4"
       id="map"
     >
       <img src={line} className="w-full absolute top-0 md:px-40 px-4" alt="" />

@@ -28,7 +28,7 @@ const Navbar = () => {
     <>
       <nav
         id="navbar-container"
-        className="fixed z-[999]  md:py-0 py-4 dark:border-b md:dark:border dark:border-gray-500 dark:bg-white transition-all dark:shadow-none duration-700 md:top-2 top-0 left-0 right-0 mx-auto w-full max-w-7xl md:rounded-full md:mt-4 flex items-center justify-between shadow-inner shadow-gray-950 px-5 backdrop-blur-sm bg-gray-800"
+        className="fixed z-[999] h-max md:py-0 py-4 dark:border-b md:dark:border dark:border-gray-500 dark:bg-white transition-all dark:shadow-none duration-700 md:top-2 top-0 left-0 right-0 mx-auto w-full max-w-7xl md:rounded-full md:mt-4 flex items-center justify-between shadow-inner shadow-gray-950 px-5 backdrop-blur-sm bg-gray-800"
       >
         {/* Hamburger Menu Icon */}
         <i
