@@ -11,7 +11,7 @@ const Background: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         className="absolute top-0 left-0 w-full h-full object-cover -z-10"
       />
       {/* Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-15 -z-10"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-25 -z-10"></div>
       {/* Content */}
       <div className="relative z-10">{children}</div>
     </main>

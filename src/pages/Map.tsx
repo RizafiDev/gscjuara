@@ -44,6 +44,7 @@ import papua5 from "../assets/images/maps/papua/5.jpg";
 
 // hiasan
 import line from "../assets/hiasan/line.png";
+import lineBlack from "../assets/hiasan/line-black.png"
 
 const iconPulau: Record<string, string> = {
   Laut: "ri-water-flash-line",
@@ -147,7 +148,8 @@ const Map: React.FC = () => {
       className="container w-full bg-gray-900 dark:bg-white items-center justify-center mx-auto lg:px-40 relative flex flex-col gap-14 md:gap-24 md:py-24 py-16 px-4"
       id="map"
     >
-      <img src={line} className="w-full absolute top-0 md:px-40 px-4" alt="" />
+      <img src={line} className="w-full dark:hidden absolute top-0 md:px-40 px-4" alt="" />
+      <img src={lineBlack} className="w-full hidden dark:flex absolute top-0 md:px-40 px-4" alt="" />
       <div className="header flex items-center justify-center w-full flex-col text-white dark:text-black">
         <h1 className="font-semibold md:text-4xl text-3xl">Peta Nusantara</h1>
         <p className="font-medium md:text-base text-sm">
@@ -405,7 +407,7 @@ const Map: React.FC = () => {
           onClick={closeOverlay}
         >
           <div
-            className="bg-white rounded-xl p-4 md:p-6 w-full max-w-3xl transform scale-0 opacity-0 animate-popup"
+            className="dark:bg-white bg-gray-900 rounded-xl p-4 md:p-6 w-full max-w-3xl transform scale-0 opacity-0 animate-popup"
             id="overlay"
             onClick={(e) => e.stopPropagation()}
           >
@@ -416,7 +418,7 @@ const Map: React.FC = () => {
                   {selectedPulau?.images?.[0] && (
                     <img
                       src={selectedPulau.images[0]}
-                      className="object-cover w-full h-full rounded-lg"
+                      className="object-cover w-full h-full rounded-lg "
                       alt={`Gambar ${selectedPulau.title} 1`}
                     />
                   )}
@@ -473,18 +475,18 @@ const Map: React.FC = () => {
                 </div>
               </div>
 
-              <h1 className="font-semibold text-black text-2xl md:text-3xl m-0">
+              <h1 className="font-semibold dark:text-black text-white text-2xl md:text-3xl m-0">
                 {selectedPulau.title}
               </h1>
-              <p className="text-gray-600 md:text-sm text-xs">
+              <p className="dark:text-black text-white md:text-sm text-xs">
                 {selectedPulau.description}
               </p>
               <div className="badge flex flex-wrap gap-2 my-3 items-center">
-                <p className="md:text-sm text-xs font-medium">Tag : </p>
+                <p className="md:text-sm text-xs font-medium dark:text-black text-white">Tag : </p>
                 {selectedPulau?.tags.map((tag, tagIndex) => (
                   <div
                     key={tagIndex}
-                    className="tag flex items-center gap-1 border-gray-900 border py-1 px-3 rounded-full max-w-[200px] truncate"
+                    className="tag flex items-center gap-1 border-white dark:border-gray-900 dark:text-black text-white border py-1 px-3 rounded-full max-w-[200px] truncate"
                   >
                     <i
                       className={`${iconPulau[tag] || "ri-star-line"} ri-xs`}

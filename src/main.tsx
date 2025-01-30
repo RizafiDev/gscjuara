@@ -14,6 +14,8 @@ import Map from "./pages/Map";
 import Navchild from "./pages/Navchild";
 import Rating from "./pages/Rating";
 import Musim from "./pages/Musim";
+import Faq from "./pages/Faq";
+import Question from "./pages/Question";
 
 AOS.init();
 
@@ -29,6 +31,8 @@ createRoot(document.getElementById("root")!).render(
       <Map />
       <Musim />
       <Rating />
+      <Faq/>
+      <Question/>
     </Background>
   </StrictMode>
 );

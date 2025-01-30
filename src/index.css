@@ -13,6 +13,16 @@
   display: none;
 }
 
+.text-outline-white{
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+}
+
+.text-outline-black{
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
 body {
   background-color: #111827;
 }

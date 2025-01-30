@@ -1,5 +1,6 @@
 import hiasan from "../assets/hiasan.png";
 import wave from "../assets/wave.png";
+
 function About() {
   return (
     <div

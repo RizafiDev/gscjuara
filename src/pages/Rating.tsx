@@ -1,6 +1,7 @@
 import React from "react";
 // hiasan
 import line from "../assets/hiasan/line.png";
+import lineBlack from "../assets/hiasan/line-black.png";
 
 const ratingData = [
   {
@@ -80,7 +81,8 @@ const ratingData = [
 const Rating = () => {
   return (
     <div className="container relative lg:px-40 px-4 flex flex-col w-full items-center justify-center py-20 md:gap-16 gap-8 mx-auto bg-gray-900 dark:bg-white">
-      <img src={line} className="w-full absolute top-0 md:px-40 px-4" alt="" />
+      <img src={line} className="w-full dark:hidden absolute top-0 md:px-40 px-4" alt="" />
+      <img src={lineBlack} className="w-full hidden dark:flex absolute top-0 md:px-40 px-4" alt="" />
       <div className="header flex flex-col items-start text-start w-full text-white dark:text-black">
         <h1 className="md:text-3xl text-2xl font-semibold">
           Rating Pengunjung
