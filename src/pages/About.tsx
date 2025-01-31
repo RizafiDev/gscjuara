@@ -7,9 +7,9 @@ function About() {
       className="relative container w-full flex mx-auto  bg-gray-900 dark:bg-white"
       id="about"
     >
-      <div className="absolute w-full md:-mt-[600px]">
+      {/* <div className="absolute w-full md:-mt-[600px]">
         <img src={wave} alt="" className="w-full -mt-40 md:mt-4" />
-      </div>
+      </div> */}
       <div className="header text-white dark:text-black px-4 z-10 lg:px-40 py-24 md:mt-28 flex md:flex-row gap-8 flex-col md:items-center justify-between w-full">
         <img src={hiasan} alt="" className="max-w-56 md:hidden flex" />
         <div className="paragraph flex flex-col items-start justify-center gap-3 md:gap-6">

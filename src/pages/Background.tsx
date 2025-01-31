@@ -8,7 +8,7 @@ const Background: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <img
         src={BgImg}
         alt="Background"
-        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+        className="absolute top-0 left-0 w-full h-full object-cover -z-20"
       />
       {/* Overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-25 -z-10"></div>
@@ -19,4 +19,3 @@ const Background: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 };
 
 export default Background;
-

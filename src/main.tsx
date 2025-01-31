@@ -16,6 +16,7 @@ import Rating from "./pages/Rating";
 import Musim from "./pages/Musim";
 import Faq from "./pages/Faq";
 import Question from "./pages/Question";
+import Footer from "./pages/Footer";
 
 AOS.init();
 
@@ -31,8 +32,9 @@ createRoot(document.getElementById("root")!).render(
       <Map />
       <Musim />
       <Rating />
-      <Faq/>
-      <Question/>
+      <Faq />
+      <Question />
+      <Footer />
     </Background>
   </StrictMode>
 );
