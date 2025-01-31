@@ -45,10 +45,7 @@ function Footer() {
 
           <ul className="inline-flex items-center gap-2 md:gap-6">
             <li>
-              <a
-                href="https://www.instagram.com/orionsmelody?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                className="text-white dark:text-black"
-              >
+              <a href="" className="text-white dark:text-black">
                 <i className="ri-instagram-line "></i>
               </a>
             </li>
