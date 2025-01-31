@@ -118,10 +118,7 @@ function Card() {
   }, []);
 
   return (
-    <div
-      className="container w-full mx-auto items-center justify-center px-4 md:px-40 flex flex-col gap-8 pb-24"
-      id="card"
-    >
+    <div className="container w-full mx-auto items-center justify-center px-4 md:px-40 flex flex-col gap-8 pb-24">
       {/* Header */}
       <div className="header flex w-full items-center  justify-between">
         <div className="layer md:gap-5 flex md:flex-row flex-col items-start md:items-center gap-2">

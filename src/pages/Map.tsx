@@ -44,7 +44,7 @@ import papua5 from "../assets/images/maps/papua/5.jpg";
 
 // hiasan
 import line from "../assets/hiasan/line.png";
-import lineBlack from "../assets/hiasan/line-black.png"
+import lineBlack from "../assets/hiasan/line-black.png";
 
 const iconPulau: Record<string, string> = {
   Laut: "ri-water-flash-line",
@@ -148,20 +148,38 @@ const Map: React.FC = () => {
       className="container w-full bg-gray-900 dark:bg-white items-center justify-center mx-auto lg:px-40 relative flex flex-col gap-14 md:gap-24 md:py-24 py-16 px-4"
       id="map"
     >
-      <img src={line} className="w-full dark:hidden absolute top-0 md:px-40 px-4" alt="" />
-      <img src={lineBlack} className="w-full hidden dark:flex absolute top-0 md:px-40 px-4" alt="" />
-      <div className="header flex items-center justify-center w-full flex-col text-white dark:text-black">
+      <img
+        src={line}
+        className="w-full dark:hidden absolute top-0 md:px-40 px-4"
+        alt=""
+      />
+      <img
+        src={lineBlack}
+        className="w-full hidden dark:flex absolute top-0 md:px-40 px-4"
+        alt=""
+      />
+      <div
+        data-aos="fade-down"
+        data-aos-offset="70"
+        data-aos-duration="1000"
+        className="header flex items-center justify-center w-full flex-col text-white dark:text-black"
+      >
         <h1 className="font-semibold md:text-4xl text-3xl">Peta Nusantara</h1>
         <p className="font-medium md:text-base text-sm">
           Klik pulau untuk informasi
         </p>
       </div>
-      <div className="map w-full">
+      <div
+        data-aos="fade-up"
+        data-aos-offset="70"
+        data-aos-duration="1000"
+        className="map w-full"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 29 793 288"
           aria-label="Map of Indonesia"
-          className="group fill-white dark:fill-black"
+          className="group fill-white dark:fill-black block"
         >
           {/* jawaaa */}
           <g
@@ -482,7 +500,9 @@ const Map: React.FC = () => {
                 {selectedPulau.description}
               </p>
               <div className="badge flex flex-wrap gap-2 my-3 items-center">
-                <p className="md:text-sm text-xs font-medium dark:text-black text-white">Tag : </p>
+                <p className="md:text-sm text-xs font-medium dark:text-black text-white">
+                  Tag :{" "}
+                </p>
                 {selectedPulau?.tags.map((tag, tagIndex) => (
                   <div
                     key={tagIndex}

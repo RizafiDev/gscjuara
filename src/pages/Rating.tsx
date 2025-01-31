@@ -1,4 +1,3 @@
-import React from "react";
 // hiasan
 import line from "../assets/hiasan/line.png";
 import lineBlack from "../assets/hiasan/line-black.png";
@@ -80,10 +79,26 @@ const ratingData = [
 
 const Rating = () => {
   return (
-    <div className="container relative lg:px-40 px-4 flex flex-col w-full items-center justify-center py-20 md:gap-16 gap-8 mx-auto bg-gray-900 dark:bg-white">
-      <img src={line} className="w-full dark:hidden absolute top-0 md:px-40 px-4" alt="" />
-      <img src={lineBlack} className="w-full hidden dark:flex absolute top-0 md:px-40 px-4" alt="" />
-      <div className="header flex flex-col items-start text-start w-full text-white dark:text-black">
+    <div
+      id="rate"
+      className="container relative lg:px-40 px-4 flex flex-col w-full items-center justify-center py-20 md:gap-16 gap-8 mx-auto bg-gray-900 dark:bg-white"
+    >
+      <img
+        src={line}
+        className="w-full dark:hidden absolute top-0 md:px-40 px-4"
+        alt=""
+      />
+      <img
+        src={lineBlack}
+        className="w-full hidden dark:flex absolute top-0 md:px-40 px-4"
+        alt=""
+      />
+      <div
+        data-aos="fade-up"
+        data-aos-offset="70"
+        data-aos-duration="1000"
+        className="header flex flex-col items-start text-start w-full text-white dark:text-black"
+      >
         <h1 className="md:text-3xl text-2xl font-semibold">
           Rating Pengunjung
         </h1>
@@ -94,6 +109,10 @@ const Rating = () => {
         <div className="rating-wrapper flex gap-6 snap-x snap-mandatory overflow-x-auto ">
           {ratingData.map((rating, index) => (
             <div
+              data-aos="fade-up"
+              data-aos-offset="70"
+              data-aos-duration="1000"
+              data-aos-delay={index * 100}
               key={index}
               className="rating flex-none snap-center w-96 md:w-[600px] bg-gray-900 border border-gray-600 dark:border-none dark:bg-white dark:shadow-inner dark:shadow-gray-400  p-4 md:p-8 md:rounded-3xl rounded-xl md:gap-6 gap-4 flex flex-col"
             >

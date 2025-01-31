@@ -11,7 +11,6 @@ import Header from "./pages/Header";
 import Card from "./pages/Card";
 import About from "./pages/About";
 import Map from "./pages/Map";
-import Navchild from "./pages/Navchild";
 import Rating from "./pages/Rating";
 import Musim from "./pages/Musim";
 import Faq from "./pages/Faq";
@@ -22,10 +21,9 @@ AOS.init();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    {/* <Splash /> */}
+    <Splash />
     <Background>
       <Navbar />
-      {/* <Navchild /> */}
       <Header />
       <Card />
       <About />

@@ -1,16 +1,49 @@
 import logo from "../assets/images/logo/applogo.png";
+import logoWhite from "../assets/images/logo/applogowhite.png";
+import line from "../assets/hiasan/line.png";
+import lineBlack from "../assets/hiasan/line-black.png";
+import sambernyawa from "../assets/images/logo/sambernyawa.png";
+import dewisartika from "../assets/images/logo/dewisartika.png";
+import utp from "../assets/images/logo/utp.png";
+import racana from "../assets/images/logo/racana.png";
 
 function Footer() {
   return (
     <div
-      className="container relative bg-gray-900 dark:bg-white py-10 lg:pt-16 lg:pb-6 mx-auto px-4 lg:px-72 flex flex-col justify-center items-start gap-6 lg:gap-20  overflow-hidden"
-      id="promotion"
+      className="container relative lg:px-40 px-4 flex flex-col w-full items-center justify-between py-20 md:gap-16 gap-8 mx-auto bg-gray-900 dark:bg-white"
+      id="footer"
     >
-      <div className="top grid grid-cols-3 lg:space-x-32 items-start ">
+      <img
+        src={line}
+        className="w-full dark:hidden absolute top-0 md:px-40 px-4"
+        alt=""
+      />
+      <img
+        src={lineBlack}
+        className="w-full hidden dark:flex absolute top-0 md:px-40 px-4"
+        alt=""
+      />
+      <div className="top flex  justify-between md:space-x-32 items-end w-full">
         {/* item1 */}
-        <div className="item1 flex flex-col gap-3 lg:gap-6">
-          <img src={logo} alt="logo" className="w-10 h-10" />
-          <ul className="inline-flex items-center gap-2 lg:gap-6">
+        <div className="item1 flex flex-col gap-3 md:gap-6 ">
+          <div className="logo flex items-center gap-2">
+            <img
+              src={logo}
+              alt="logo"
+              className="h-10 object-cover dark:flex hidden"
+            />
+            <img
+              src={logoWhite}
+              alt="logo"
+              className="h-10 object-cover flex dark:hidden"
+            />
+            <img src={utp} alt="logo" className="h-10 object-cover" />
+            <img src={racana} alt="logo" className="w-10 h-10" />
+            <img src={sambernyawa} alt="logo" className=" h-10 object-cover" />
+            <img src={dewisartika} alt="logo" className="h-10 object-cover" />
+          </div>
+
+          <ul className="inline-flex items-center gap-2 md:gap-6">
             <li>
               <a
                 href="https://www.instagram.com/orionsmelody?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
@@ -33,7 +66,7 @@ function Footer() {
         {/* item 1 end */}
         {/* item2 */}
         <div className="item2 flex">
-          <ul className="inline-flex flex-col items-start gap-1 lg:gap-3">
+          <ul className="inline-flex flex-col items-end gap-1 md:gap-3">
             <li>
               <p className="font-semibold text-sm text-white dark:text-black">
                 Contact
@@ -58,30 +91,12 @@ function Footer() {
         </div>
         {/* item 2 end */}
         {/* item3 */}
-        <div className="item3 flex">
-          <ul className="inline-flex flex-col items-start gap-1 lg:gap-3">
-            <li>
-              <p className="font-semibold text-sm text-white dark:text-black">
-                Community
-              </p>
-            </li>
-            <li>
-              <a href="#" className=" text-xs text-white dark:text-black">
-                Blog
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-xs text-white dark:text-black">
-                Knowledge Hub
-              </a>
-            </li>
-          </ul>
-        </div>
+
         {/* item 3 end */}
       </div>
 
       <div className="credit items-center flex justify-between w-full text-xs border-t border-gray-600 pt-5 text-white dark:text-black">
-        <p>© 2025 Orion's Melody</p>
+        <p>© 2025 Kopramsega</p>
         <p>All Right Reserved</p>
       </div>
     </div>

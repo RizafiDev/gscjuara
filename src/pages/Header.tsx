@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Typed from "typed.js";
+import React from "react";
 
 function Header() {
   const [activeButton, setActiveButton] = useState<string | null>(null);
@@ -8,13 +10,28 @@ function Header() {
     setActiveButton(activeButton === button ? null : button);
   };
 
+  const el = React.useRef<HTMLSpanElement | null>(null);
+  React.useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: ["Wisata Nusantara", "Keajaiban Indonesia"],
+      typeSpeed: 80,
+      backSpeed: 80,
+      loop: true,
+    });
+
+    return () => {
+      // Destroy Typed instance during cleanup to stop animation
+      typed.destroy();
+    };
+  }, []);
+
   return (
     <div
       className="container mx-auto md:px-0 px-4 w-full items-center justify-center  md:min-h-[650px] flex flex-col gap-4 md:gap-6 pb-12 pt-28 md:pt-32"
       id="header"
     >
       <h1 className="text-white  text-3xl md:text-5xl font-semibold max-w-[800px] text-center drop-shadow-lg overflow-y-hidden">
-        Temukan Surga Tersembunyi Wisata Nusantara
+        Temukan Surga Tersembunyi <br /> <span ref={el} />
       </h1>
       <p className="md:max-w-[600px] md:text-base text-xs text-center font-medium text-white drop-shadow-lg">
         "Indonesia, negeri penuh pesona dengan destinasi wisata menakjubkan.

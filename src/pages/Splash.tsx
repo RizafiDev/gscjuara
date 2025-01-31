@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import gsap from "gsap";
-import logo from "../assets/images/logo/racana.png";
+import racana from "../assets/images/logo/racana.png";
+import utp from "../assets/images/logo/utp.png";
+import sambernyawa from "../assets/images/logo/sambernyawa.png";
+import dewisartika from "../assets/images/logo/dewisartika.png";
 
 function Splash() {
   useEffect(() => {
@@ -38,22 +41,11 @@ function Splash() {
     );
 
     gsap.fromTo(
-      "#garis",
-      { opacity: 0, x: -20 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 1,
-        delay: 1,
-      }
-    );
-
-    gsap.fromTo(
       "#deskripsi",
-      { opacity: 0, x: -20 },
+      { opacity: 0, y: -20 },
       {
         opacity: 1,
-        x: 0,
+        y: 0,
         duration: 1,
         delay: 1.7,
       }
@@ -70,15 +62,29 @@ function Splash() {
       id="splash"
       className="splash absolute z-50 w-full h-screen bg-black flex items-center justify-center overflow-hidden"
     >
-      <div className="brand flex items-center justify-center gap-3">
-        <img
-          id="logo"
-          src={logo}
-          alt="Neptune Music Logo"
-          className="w-20 h-20"
-        />
-        <div className="w-[2px] h-16 bg-white" id="garis"></div>
-        <div className="des flex flex-col items-start" id="deskripsi">
+      <div className="brand flex flex-col items-center justify-center gap-3">
+        <div className="img flex items-center justify-center gap-4">
+          <img id="logo" src={utp} alt="Neptune Music Logo" className="h-20" />
+          <img
+            id="logo"
+            src={racana}
+            alt="Neptune Music Logo"
+            className="h-20"
+          />
+          <img
+            id="logo"
+            src={sambernyawa}
+            alt="Neptune Music Logo"
+            className="h-20"
+          />
+          <img
+            id="logo"
+            src={dewisartika}
+            alt="Neptune Music Logo"
+            className=" h-20"
+          />
+        </div>
+        <div className="des flex flex-col items-center" id="deskripsi">
           <p className="text-white font-medium text-lg">
             Ganesha Scout Competition #6
           </p>

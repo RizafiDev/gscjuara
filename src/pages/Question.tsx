@@ -3,7 +3,7 @@ import lineBlack from "../assets/hiasan/line-black.png";
 
 function Question() {
   return (
-    <div className="container w-full bg-gray-900 dark:bg-white items-center justify-center  mx-auto lg:px-40 relative flex md:flex-row flex-col gap-7 md:gap-36 md:py-24 py-16 px-4">
+    <div className="container w-full overflow-hidden bg-gray-900 dark:bg-white items-center justify-center  mx-auto lg:px-40 relative flex md:flex-row flex-col gap-7 md:gap-36 md:py-24 py-16 px-4">
       <img
         src={line}
         className="w-full dark:hidden absolute top-0 md:px-40 px-4"
@@ -14,7 +14,12 @@ function Question() {
         className="w-full hidden dark:flex absolute top-0 md:px-40 px-4"
         alt=""
       />
-      <div className="text flex flex-col items-start text-start max-w-[400px] gap-4">
+      <div
+        data-aos="fade-right"
+        data-aos-offset="70"
+        data-aos-duration="1000"
+        className="text flex flex-col items-start text-start max-w-[400px] gap-4"
+      >
         <h1 className="font-semibold text-2xl md:text-4xl dark:text-black text-white">
           Ada yang ingin kamu tanyakan?
         </h1>
@@ -23,7 +28,12 @@ function Question() {
           pertanyaan darimu!
         </p>
       </div>
-      <div className="form flex md:w-fit w-full">
+      <div
+        data-aos="fade-left"
+        data-aos-offset="70"
+        data-aos-duration="1000"
+        className="form flex md:w-fit w-full"
+      >
         <form
           action=""
           className="flex flex-col md:w-fit w-full items-start gap-3 border-2 rounded-lg p-5 border-gray-400 dark:border-black"
